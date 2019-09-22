@@ -35,4 +35,4 @@ The output is a genes.out file and a genes.raw file that would be used in the ne
       --adap-permp=10000 
       --out magma
     
-    
+    **Gene-set analysis*
