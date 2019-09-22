@@ -34,11 +34,13 @@ GWAS summary = MDD2018_ex23andMe from PGC web site: https://www.med.unc.edu/pgc/
 
 ***eMAGMA Annotation files
 
-        wget 
-
+        https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/Brain_annot_genes.zip
+        
+        https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/Whole_Blood.genes.zip  
+        
 ***eMAGMA Co-expression network files
 
-        wget https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/network_files.zip 
+        https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/network_files.zip 
         
 
 Now that you have all the neccessary files go to **Part 1** to begin with the analysis.
