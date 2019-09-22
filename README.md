@@ -23,6 +23,7 @@ The tutorial is divided in two parts: **Part 1. Runs MAGMA* to assign SNPs to th
         wget https://ctg.cncr.nl/software/MAGMA/aux_files/NCBI37.3.zip
 #reference data 
         https://ctg.cncr.nl/software/MAGMA/ref_data/g1000_eur.zip
+
 **eMAGMA Annotation files
 ***eMAGMA network files
 **MDD2018_excluding23andMe_short.txt
