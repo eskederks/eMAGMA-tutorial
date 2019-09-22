@@ -22,17 +22,20 @@ You can use wget o curl to import the files directly into your directory example
         
         wget https://ctg.cncr.nl/software/MAGMA/aux_files/NCBI37.3.zip
 
-#reference data 
+#Reference data 
         
         wget https://ctg.cncr.nl/software/MAGMA/ref_data/g1000_eur.zip
 
-#GWAS summary = MDD2018_ex23andMe from PGC web site: https://www.med.unc.edu/pgc/results-and-downloads/mdd/
+GWAS summary = MDD2018_ex23andMe from PGC web site: https://www.med.unc.edu/pgc/results-and-downloads/mdd/
 
 **Notice: If you are using your own data, make sure to download the auxiliary files that correspond to the genome build of your data.
 
-***You also need the following files:* 
+***eMAGMA files* 
 
 ***eMAGMA Annotation files 
-***eMAGMA network files https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/network_files.zip 
+        wget 
+***eMAGMA Co-expression network files
+        wget https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/network_files.zip 
+        
 
 Now that you have all the neccessary files go to **Part 1** to begin with the analysis.
