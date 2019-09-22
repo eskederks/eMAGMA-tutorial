@@ -33,7 +33,8 @@ Tissue specific annotation files and Co-expression network files are freely prov
 
 You also need the folling files: 
 **eMAGMA Annotation files 
-***eMAGMA network files
+***eMAGMA network files https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/network_files.zip 
+
 
 
 
