@@ -1,7 +1,7 @@
 # eMAGMA-TUTORIAL
 
 #This tutorial is a step by step guide on how to use eMAGMA, an approach to assign SNPs to tissue specific genes as presented in …. *XXXX add reference (which reference to use new one or Gerring 2019 add link!XXX.
-#Here we provide the scripts and files to apply the eMAGMA approach and generate a list of individual genes risk genes and gene-co-expression networks using genome-wide summary statistics. 
+Here we provide the scripts and files to apply the eMAGMA approach and generate a list of individual genes risk genes and gene-co-expression networks using genome-wide summary statistics. 
 In this tutorial we use the GWAS summary statistics from a GWAS in Major Depression Disorders (MDD), publicly available in the Psychiatric Genomic Consortium (PGC) website. We provide an example with MDD, but you can use the scripts with your own data. 
 The tutorial is divided in two parts: **Part 1 Runs MAGMA** to assign SNPs to the nearest genes (gene-base analysis) and then run a gene-set analysis of proximity to estimate what set of genes are more highly associated with MDD. **Part 2 runs eMAGMA** using summary statistics and eQTL data from GTEx project (SNP to tissue specific annotation), to run a gene-base analysis then combined with a gene Co-expression network to assign SNPs to tissue specific genes and estimate what tissue specific genes are more highly associated with MDD.
 
@@ -14,15 +14,15 @@ Two auxiliary files are required: a file with gene locations for protein-coding 
 
 You can use wget o curl to import the files directly into your directory example:
 
-#MAGMA: 
+*MAGMA*
         
         wget https:// https://ctg.cncr.nl/software/MAGMA/prog/magma_v1.07b_static.zip
 
-#Auxiliary files for 37(hg19): 
+*Auxiliary files for 37(hg19): 
         
         wget https://ctg.cncr.nl/software/MAGMA/aux_files/NCBI37.3.zip
 
-#Reference data 
+*Reference data 
         
         wget https://ctg.cncr.nl/software/MAGMA/ref_data/g1000_eur.zip
 
@@ -32,13 +32,13 @@ GWAS summary = MDD2018_ex23andMe from PGC web site: https://www.med.unc.edu/pgc/
 
 **eMAGMA files**
 
-***eMAGMA Annotation files
+*eMAGMA Annotation files*
 
         https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/Brain_annot_genes.zip
         
         https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/Whole_Blood.genes.zip  
         
-***eMAGMA Co-expression network files
+*eMAGMA Co-expression network files*
 
         https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/network_files.zip 
         
