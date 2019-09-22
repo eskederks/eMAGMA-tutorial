@@ -31,7 +31,7 @@ Tissue specific annotation files and Co-expression network files are freely prov
 
 **Notice: If you are using your own data, make sure to download the auxiliary files that correspond to the genome build of your data.
 
-You also need the folling files: 
+You also need the following files: 
 **eMAGMA Annotation files 
 ***eMAGMA network files https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/network_files.zip 
 
