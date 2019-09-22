@@ -30,11 +30,14 @@ GWAS summary = MDD2018_ex23andMe from PGC web site: https://www.med.unc.edu/pgc/
 
 **Notice: If you are using your own data, make sure to download the auxiliary files that correspond to the genome build of your data.
 
-***eMAGMA files* 
+**eMAGMA files**
 
-***eMAGMA Annotation files 
+***eMAGMA Annotation files
+
         wget 
+
 ***eMAGMA Co-expression network files
+
         wget https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/network_files.zip 
         
 
