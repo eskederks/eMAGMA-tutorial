@@ -21,6 +21,7 @@ Gene location file: a file for protein-coding genes, in the same build that the 
 #You can use wget o curl to import the files directly into your directory example:
 
 #MAGMA: 
+        
         wget https:// https://ctg.cncr.nl/software/MAGMA/prog/magma_v1.07b_static.zip
 
 #Auxiliary files for 37(hg19): 
