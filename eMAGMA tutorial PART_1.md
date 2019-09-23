@@ -3,17 +3,17 @@
 
 #This tutorial assumes that MAGMA and all the files required for the tutorial are in the same directory. If your files are in different directories you must add the directory path to the command line. To begin set your working directory and unzip the files
 
-  cd /path/to-your folder.
+    cd /path/to-your folder.
 
 #Unzip the three folders Gene_level_analysis.zip, magma_v1.07b.zip and NCBI37.3.zip
   
-  unzip *file.zip 
+    unzip *file.zip 
 
 **Annotation* Map SNPs to genes
 
 #Annotation is preliminary to the gene association analysis, in this step SNPs from the GWAS summary statistics are mapped to genes in the gene location file. For convenience we start by extracting SNP ID, chromosome, and base pair position from the GWAS summary, into a snp-loc file in MAGMA format, we also extracted the p-value information which will be used in a later step.
   
-  awk '{print $2,$1,$3,$11}' MDD2018_excluding23andMe > MDD2018_excluding23andMe_short.txt
+    awk '{print $2,$1,$3,$11}' MDD2018_excluding23andMe > MDD2018_excluding23andMe_short.txt
 
 #Notice that you don’t need to create an additional file, if the summary data is organized with the three first columns matching the order: SNP ID, chromosome and base pair position, MAGMA ignores other columns.
 
@@ -32,7 +32,7 @@ The output is a genes.out file and a genes.raw file that would be used in the ne
     ./magma --bfile g1000_eur  
       --gene-annot MDD_list.genes.annot 
       --pval MDD2018_excluding23andMe_short.txt N=307,354  
-      --adap-permp=10000 
+      --gene-settings adap-permp=10000 
       --out magma
     
     **Gene-set analysis*
