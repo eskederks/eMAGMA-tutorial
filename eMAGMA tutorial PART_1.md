@@ -1,5 +1,6 @@
 # PART 1
-**GENE-BASE ANALYSIS WITH MAGMA*
+
+**GENE-BASE ANALYSIS WITH MAGMA**
 
 #This tutorial assumes that MAGMA and all the files required for the tutorial are in the same directory. If your files are in different directories you must add the directory path to the command line. To begin set your working directory and unzip the files
 
@@ -9,7 +10,7 @@
   
     unzip *file.zip 
 
-**Annotation* Map SNPs to genes
+**Annotation* Map SNPs to genes**
 
 #Annotation is preliminary to the gene association analysis, in this step SNPs from the GWAS summary statistics are mapped to genes in the gene location file. For convenience we start by extracting SNP ID, chromosome, and base pair position from the GWAS summary, into a snp-loc file in MAGMA format, we also extracted the p-value information which will be used in a later step.
   
@@ -23,7 +24,7 @@
       --gene-loc NCBI37.3.gene.loc 
       --out MDD_list
     
-**Gene base analysis on snp-pvalue data*
+**Gene base analysis on snp-pvalue data**
 
 #In this step SNPs are assigned to nearest gene and gene-based statistics are computed based on the sum of SNP-log (10)P-values. 
 The analysis requires of raw genotype data, P-value information, sample size of the summary data and the gene annotation file generated in the previous step. For this tutorial the raw genotype data correspond to the 1000 genome reference file for European population [g1000_eur], P-values were extracted from the MDD GWAS summary data prepared in the previous step [MDD2018_excluding23andMe_short.txt]. The total number of samples for the MDD GWAS is N=307,354. Multiple testing is done using 10000 adaptative permutations (--adap-permp=10000). 
@@ -35,4 +36,4 @@ The output is a genes.out file and a genes.raw file that would be used in the ne
       --gene-settings adap-permp=10000 
       --out magma
     
-    **Gene-set analysis*
+   **Gene-set analysis**
