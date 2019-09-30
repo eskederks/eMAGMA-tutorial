@@ -26,3 +26,5 @@ This step uses the annotation files provided genes.annot
 for file1 in MDD/*_normalised.txt; do 
   for file2 in MDD/*genes.raw do
  ./magma --gene-results "$file2" --set-annot "$file1" col=2,1 --out geneset$file1; done; done
+ 
+ 
