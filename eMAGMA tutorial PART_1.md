@@ -6,7 +6,7 @@
 
     cd /path/to-your folder.
 
-#Unzip the three folders Gene_level_analysis.zip, magma_v1.07b.zip and NCBI37.3.zip
+#Unzip the program folders and the data file magma_v1.07b.zip, NCBI37.3.zip and MDD2018_excluding23andMe_short (downloan this file from the PGC website!)
   
     unzip *file.zip 
 
@@ -41,10 +41,32 @@ The analysis requires of raw genotype data, P-value information, sample size and
     --set-annot "$file" col=2,1 
     --out "$file"_MDD_magma
   
-#The code above ouputs one significant gene-set file thxxxxx.set that correspond to the xxx set
-we can use grep to see what genes are the significant ones:
+The code above ouputs one significant gene-set file for Thyroid:
+        
+        head Thyroid_entrez_gtex_v7_normalised.txt_MDD_permuta_magma.gsa.sets.genes.out 
+        
+ The file looks like this:
+        
+        # ALPHA = 0.05
+        # NUMBER_OF_TESTS = 27
 
-grep "color" xxx.gsa.out
+        # _SET1_  VARIABLE = saddlebrown (set)
+        # _SET1_  NGENES = 1072
+        # _SET1_  P-VALUE = 0.000796434
+        _SET1_   GENE        CHR      START       STOP  NSNPS  NPARAM    N        ZSTAT            P  ZFITTED_BASE  ZRESID_BASE
+        _SET1_   26155         1     879583     894679     95      21  307      0.73902      0.21525    0.00033225      0.73869
+        _SET1_   51150         1    1152288    1167447    126      10  307     -0.38593      0.59927    0.00033225     -0.38626
+        _SET1_   54998         1    1309110    1310818      9       5  307        1.237      0.10463    0.00033225       1.2367
+
+        
+The informattion here roufoky inidcates that out of 27 gene-sets MDD associations signals were significanlty enriched in gene-set saddlebrown, with a P-value=0.000796434, this set has 1072 genes, listed in the file. Using grep we can extract the beta and SE values for the significant sets from the gsa.out file. 
+
+    grep saddlebrown Thyroid_entrez_gtex_v7_normalised.txt_MDD_permuta_magma.gsa.out
+
+
+
+To filter out the top associated the genes with a treshold of 0.05 we can do:
+sort -n -r -k10|awk '{if ($10<=0.05) print $0}' Thyroid_entrez_gtex_v7_normalised.txt_MDD_permuta_magma.gsa.sets.genes.out > top_thyroid_MDD_saddlebrown
 
 So far we have generated: 
 the x
