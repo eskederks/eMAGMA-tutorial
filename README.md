@@ -10,7 +10,7 @@ Tissue specific annotation files and Co-expression network files are freely prov
 TThe analysis is done using MAGMA v1.07b (ref) MAGMA and auxiliary files can be downloading from the program website: https://ctg.cncr.nl/software/magma. Two auxiliary files are required: a file with gene locations for protein-coding genes from NCBI and a genome reference file. For this tutorial we use build 37(hg19) that matches the build of the summary data (MDD2018_excluding23andMe) and reference file for European population. Gene location files for build 36, 37, & 38 are available from MAGMA website.
 You can use wget o curl to import the files directly into your directory example:
 
-*MAGMA*
+**MAGMA*
         
         wget https:// https://ctg.cncr.nl/software/MAGMA/prog/magma_v1.07b_static.zip
 
