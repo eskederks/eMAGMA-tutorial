@@ -67,7 +67,7 @@ The informattion here roufoky inidcates that out of 27 gene-sets MDD association
 
 To filter out the top associated the genes with a treshold of 0.05 we can do:
 
-    sort -n -r -k10|awk '{if ($10<=0.05) print $0}' Thyroid_entrez_gtex_v7_normalised.txt_MDD_permuta_magma.gsa.sets.genes.out >           top_thyroid_MDD_saddlebrown
+    sort -n -r -k10|awk '{if ($10<=0.05) print $0}' Thyroid_entrez_gtex_v7_normalised.txt_MDD_permuta_magma.gsa.sets.genes.out > top_thyroid_MDD_saddlebrown
 
 Thi will generated a list of 133 genes.
 
