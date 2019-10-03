@@ -1,17 +1,13 @@
 # eMAGMA-TUTORIAL
 
-#This tutorial is a step by step guide on how to use eMAGMA, an approach to assign SNPs to tissue specific genes as presented in …. *XXXX add reference (which reference to use new one or Gerring 2019 add link!XXX.
-Here we provide the scripts and files to apply the eMAGMA approach and generate a list of individual genes risk genes and gene-co-expression networks using genome-wide summary statistics. 
-In this tutorial we use the GWAS summary statistics from a GWAS in Major Depression Disorders (MDD), publicly available in the Psychiatric Genomic Consortium (PGC) website. We provide an example with MDD, but you can use the scripts with your own data. 
-The tutorial is divided in two parts: **Part 1 Runs MAGMA** to assign SNPs to the nearest genes (gene-base analysis) and then run a gene-set analysis of proximity to estimate what set of genes are more highly associated with MDD. **Part 2 runs eMAGMA** using summary statistics and eQTL data from GTEx project (SNP to tissue specific annotation), to run a gene-base analysis then combined with a gene Co-expression network to assign SNPs to tissue specific genes and estimate what tissue specific genes are more highly associated with MDD.
+#This tutorial is a step by step guide on how to use eMAGMA, an approach to assign SNPs to tissue specific genes as presented in XXXX add reference (which reference to use new one or Gerring 2019 add link!XXX. Here we provide the scripts and files to apply the eMAGMA approach and generate a list of individual genes risk genes and gene-co-expression networks using genome-wide summary statistics. In this tutorial we use the GWAS summary statistics from a GWAS in Major Depression Disorders (MDD), publicly available in the Psychiatric Genomic Consortium (PGC) website. We provide an example with MDD, but you can use the scripts with your own data. The tutorial is divided in two parts: Part 1 Runs MAGMA to assign SNPs to the nearest genes (gene-base analysis) and then run a gene-set analysis of proximity to estimate what set of genes are more highly associated with MDD. Part 2 runs eMAGMA using summary statistics and eQTL data from GTEx project (SNP to tissue specific annotation), to run a gene-base analysis then combined with a gene Co-expression network to assign SNPs to tissue specific genes and estimate what tissue specific genes are more highly associated with MDD.
 
 Tissue specific annotation files and Co-expression network files are freely provided with this tutorial. Explanation of the methods and resources used in this tutorial are provided in the publication accompanying this tutorial. *XXXXXRef
 
+
 **FILES and SOFTWARE TO DOWNLOAD**
 
-The analysis is done using MAGMA v1.07b (ref) MAGMA and auxiliary files can be download from the program website: https://ctg.cncr.nl/software/magma.
-Two auxiliary files are required: a file with gene locations for protein-coding genes from NCBI and a genome reference file. For this tutorial we use build 37(hg19) that matches the build of the summary data (MDD2018_excluding23andMe) and reference file for European population. Gene location files for build 36, 37, & 38 are available from MAGMA website.
-
+TThe analysis is done using MAGMA v1.07b (ref) MAGMA and auxiliary files can be downloading from the program website: https://ctg.cncr.nl/software/magma. Two auxiliary files are required: a file with gene locations for protein-coding genes from NCBI and a genome reference file. For this tutorial we use build 37(hg19) that matches the build of the summary data (MDD2018_excluding23andMe) and reference file for European population. Gene location files for build 36, 37, & 38 are available from MAGMA website.
 You can use wget o curl to import the files directly into your directory example:
 
 *MAGMA*
