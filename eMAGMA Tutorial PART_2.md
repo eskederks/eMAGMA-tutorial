@@ -3,21 +3,21 @@
 #IN this part of the turorial we will use the eMAGMA aproach to generate a list of genes which xxxxx(function is assocaited with MDDxxxx).
 Similar to PART 1 of the tutorial we will use MAGMA for the association anlysis. Basically the steps to follow are the same thatn in PART 1 of the turorial but instead of doing a SNP to gene annotation we will do a SNP to gene annotation.
 
-This step uses the annotation files provided genes.annot
+This step uses the annotation files provided genes.annot, to ilustrate the proceedings we will use only the files provided in batch_1, with your own data you can make use all the annotation files that are provided are your own convinience. 
 
-    unzip xxxxtrait.genes.annot
+    unzip batch_1.zip
  
  **eMAGMA Gene-based association: SNP to tissue specific genes**
 
 
-    for file in annotation_files/*genes.annot; do 
+    for file in batch_1/*genes.annot; do 
     ./magma --bfile g1000_eur  
     --gene-annot $file 
-    --pval MDD/xxxx N=
+    --pval MDD2018_excluding23andMe_short.txt N=
     --gene-settings adap-permp=10000 
-  --out MDD_full_emagma; done **XXX thismaybe need to change to individual files out !!!!!
+    --out $file_MDD_emagma; done
     
-    somthing about the ouput: 
+somthing about the ouput: 
 
 
 
