@@ -66,18 +66,9 @@ The informattion here roufoky inidcates that out of 27 gene-sets MDD association
 
 
 To filter out the top associated the genes with a treshold of 0.05 we can do:
-sort -n -r -k10|awk '{if ($10<=0.05) print $0}' Thyroid_entrez_gtex_v7_normalised.txt_MDD_permuta_magma.gsa.sets.genes.out > top_thyroid_MDD_saddlebrown
 
-So far we have generated: 
-the x
-the gene networks that a gene-set.gsa [magma.gsa.genes.out] file for that set. It will also generated a  MDD_magma_] gsa.genes.out [MDD_magma_gsa.genes.outxxx]
+    sort -n -r -k10|awk '{if ($10<=0.05) print $0}' Thyroid_entrez_gtex_v7_normalised.txt_MDD_permuta_magma.gsa.sets.genes.out >           top_thyroid_MDD_saddlebrown
 
-NExt check files :
-head xxxx.gene-set
-sort -g -k8 gene-set
-Use grep to extract the genes list
-grep xxcolor magma.gsa.out
-see beta SE and number of genes.
-use gene list.
+Thi will generated a list of 133 genes.
 
 So far we genrated a list of genes that based on gene-proximity are assocaited with MDD. in the second part of this tutorial we will use eMAGMA to generate a list of genes assocaited to MDD based on genes function. go to PART2!
