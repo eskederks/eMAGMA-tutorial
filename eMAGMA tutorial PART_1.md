@@ -69,4 +69,4 @@ To filter out the top associated the genes with a treshold of 0.05 we can do:
 
 This will generated a list of 133 genes that based on gene-proximity are higly associated with MDD. 
 
-In the second part of this tutorial we will use eMAGMA to generate a list of genes associated with MDD based on eQTL, gene expressiona and tissue specific information. go to PART2!
+In the second part of this tutorial we will use eMAGMA to generate a list of genes associated with MDD based on tissue-specific  eQTL information. go to PART2!
