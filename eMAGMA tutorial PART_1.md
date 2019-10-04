@@ -41,7 +41,7 @@
     --set-annot "$file" col=2,1 
     --out "$file"_MDD_magma
   
-The code above outputs one significant gene-set file for Thyroid:
+The code above outputs one significant gene-set file for Thyroid, to see the head of the file do:
         
         head Thyroid_entrez_gtex_v7_normalised.txt_MDD_permuta_magma.gsa.sets.genes.out 
         
