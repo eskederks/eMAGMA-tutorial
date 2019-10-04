@@ -36,6 +36,6 @@ For this step We use agin the network files downloaded in part1  and the genes.r
  
 A gene set file [] is generated for those tissues that have gene sets significanlty associated with MDD. In total xxx(for brsin only was 12) have significant sets. Now we will select sets that are more higly assocaited 
 
-tissues
+(I am hera at the moment! Not very clear about the results I am getting, waiting for Zacks confirmation on the code , to fix and add final reults and code on extracting info for all tissues)
  
 
