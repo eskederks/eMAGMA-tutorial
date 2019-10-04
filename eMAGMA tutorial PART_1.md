@@ -67,6 +67,6 @@ To filter out the top associated the genes with a treshold of 0.05 we can do:
 
     sort -n -r -k10 Thyroid_entrez_gtex_v7_normalised.txt_MDD_permuta_magma.gsa.sets.genes.out|awk '{if ($10<=0.05) print $0}' > top_thyroid_MDD_saddlebrown
 
-Thi will generated a list of 133 genes.
+This will generated a list of 133 genes that based on gene-proximity are higly associated with MDD. 
 
-So far we generated a list of genes that based on gene-proximity are associated with MDD. In the second part of this tutorial we will use eMAGMA to generate a list of genes associated to MDD based on genes function go to PART2!
+In the second part of this tutorial we will use eMAGMA to generate a list of genes associated with MDD based on eQTL, gene expressiona and tissue specific information. go to PART2!
