@@ -32,7 +32,10 @@ For this step We use agin the network files downloaded in part1  and the genes.r
      --set-annot "$file1" col=2,1 
      --out "$file2"_emagma;done;done
  
+ You can now run the script with for the other tissues, replacing the file name that is Batch_1, Batch_2 or so on instead of Brain.
+ 
 A gene set file [] is generated for those tissues that have gene sets significanlty associated with MDD. In total xxx(for brsin only was 12) have significant sets. Now we will select sets that are more higly assocaited 
 
 tissues
  
+
