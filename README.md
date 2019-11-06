@@ -1,6 +1,8 @@
 # eMAGMA-TUTORIAL
 
-#This tutorial is a step by step guide on how to use eMAGMA, an approach to conduct eQTL informed gene-based tests by assigning SNPs to tissue-specific eGenes as presented in Gerring et al. 2019 (link and other reference to be added). Here we provide the scripts and files to apply the eMAGMA approach which generates a list of disease-associated eGenes using genome-wide summary statistics. In this tutorial, we apply eMAGMA to GWAS summary statistics of Major Depression Disorder (MDD); these summary statistics are publicly available from the Psychiatric Genomic Consortium (PGC) website. The tutorial is divided in two parts. Part 1 Runs eMAGMA gene-based analysis of proximity, this analysis integrates a SNP-gene association from GTEx to a GWAS summary data.  SNPs (from the summary data) are assigning to genes based on their association with gene expression. The SNP-gene association from GTEx is a tissue specific annotation, hence we can estimate what genes are more highly associated with MDD at the tissue level. In Part 2 we show how to test enrichment of association in co-expression networks. The aim is to identify groups of genes (modules) that are more highly associated with MDD risk. 
+#This tutorial is a step by step guide on how to use eMAGMA, an approach to conduct eQTL informed gene-based tests by assigning SNPs to tissue-specific eGenes as presented in Gerring et al. 2019 (link and other reference to be added). Here we provide the scripts and files to apply the eMAGMA approach which generates a list of disease-associated eGenes using genome-wide summary statistics. In this tutorial, we apply eMAGMA to GWAS summary statistics of Major Depression Disorder (MDD); these summary statistics are publicly available from the Psychiatric Genomic Consortium (PGC) website. 
+
+The tutorial is divided in two parts. Part 1 Runs eMAGMA gene-based analysis of proximity, this analysis integrates a SNP-gene association from GTEx to a GWAS summary data.  SNPs (from the summary data) are assigning to genes based on their association with gene expression. The SNP-gene association from GTEx is a tissue specific annotation, hence we can estimate what genes are more highly associated with MDD at the tissue level. In Part 2 we show how to test enrichment of association in co-expression networks. The aim is to identify groups of genes (modules) that are more highly associated with MDD risk. 
 
 Tissue specific annotation files and Co-expression network files are freely provided with this tutorial. Explanation of the methods and resources used in this tutorial are provided in the publication accompanying this tutorial XXXXXRef-New one
 
@@ -37,7 +39,9 @@ The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 20
         
         
 **Notice: If you are using your own data, make sure to download the auxiliary files that correspond to the genome build of your data.
-eMAGMA files*
+
+
+*eMAGMA files*
 
 *eMAGMA Annotation files*
     
