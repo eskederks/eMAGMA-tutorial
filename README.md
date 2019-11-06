@@ -31,7 +31,7 @@ The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 20
     
     wget https://ctg.cncr.nl/software/MAGMA/ref_data/g1000_eur.zip
 
-*GWAS summary = MDD2018_ex23andMe from PGC web site: 
+*GWAS summary = MDD2018_ex23andMe from PGC web site*
         
         https://www.med.unc.edu/pgc/results-and-downloads/mdd/
         
