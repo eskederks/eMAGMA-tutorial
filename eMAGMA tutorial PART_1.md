@@ -6,17 +6,18 @@ The tutorial assumes that the eMAGMA files and the program (MAGMA) and auxiliary
 
 
 Unzip the program folders and the data file magma_v1.07b.zip, NCBI37.3.zip and MDD2018_excluding23andMe (downland this file from the PGC website)
-
+    
     unzip *file.zip 
 
 
 To run the gen-based association we need the P-values from the MDD GWAS summary statistics. Run the following code to extract SNP ID, chromosome, base pair position, and p-value information from the GWAS summary statistics, into a new txt file.
 
-
     awk '{print $2,$1,$3,$11}' MDD2018_excluding23andMe > MDD2018_excluding23andMe_short.txt
 
 
 The three first columns of the input summary data must be in the order: SNP ID, chromosome and base pair position, the program (MAGMA) ignores other columns. 
+
+
 
 
 
