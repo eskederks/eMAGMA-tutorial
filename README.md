@@ -73,6 +73,9 @@ Notice: If you are using your own data, make sure to download the auxiliary file
    *network_files.zip*
 
 
+**eMAGMA tutorial-Amygdala output file**
+
+
 *************************************
 
 Now that you have all the necessary files go to **Part 1** to begin with the analysis.
