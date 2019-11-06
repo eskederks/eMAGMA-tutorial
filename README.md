@@ -62,9 +62,10 @@ The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 20
    *Batch5.annotation*
    
 
+
 *eMAGMA Co-expression network files*
 
-    *network_files.zip*
+   *network_files.zip*
 
 
 
