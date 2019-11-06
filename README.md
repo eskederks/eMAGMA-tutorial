@@ -56,15 +56,15 @@ The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 20
 **eMAGMA Annotation files*
 
 
-      *Batch1.annotation*
+   *Batch1.annotation*
    
-      *Batch2.annotation*
+   *Batch2.annotation*
    
-      *Batch3.annotation*
+   *Batch3.annotation*
    
-      *Batch4.annotation*
+   *Batch4.annotation*
    
-      *Batch5.annotation*
+   *Batch5.annotation*
  
  
  
@@ -72,8 +72,9 @@ The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 20
 
 **eMAGMA Co-expression network files*
 
+   *network_files.zip*
 
-      *network_files.zip*
+
 
 *************************************
 
