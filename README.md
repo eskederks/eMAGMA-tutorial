@@ -13,6 +13,7 @@ This tutorial is executable in Unix, is assumed that users are familiar with the
 
 *************************************
 
+
 **Setting Up**
 
 
@@ -26,6 +27,7 @@ The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 20
 
 
 *************************************
+
 **MAGMA*
     
     wget https:// https://ctg.cncr.nl/software/MAGMA/prog/magma_v1.07b_static.zip
@@ -47,30 +49,31 @@ The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 20
 
 
 *************************************
+
 **eMAGMA files**
 
 
 **eMAGMA Annotation files*
 
 
-   *Batch1.annotation*
+       *Batch1.annotation*
    
-   *Batch2.annotation*
+       *Batch2.annotation*
    
-   *Batch3.annotation*
+       *Batch3.annotation*
    
-   *Batch4.annotation*
+       *Batch4.annotation*
    
-   *Batch5.annotation*
+       *Batch5.annotation*
  
  
  
  *************************************
 
-*eMAGMA Co-expression network files*
+**eMAGMA Co-expression network files*
 
 
-   *network_files.zip*
+       *network_files.zip*
 
 *************************************
 
