@@ -14,6 +14,7 @@ This tutorial is executable in Unix, is assumed that users are familiar with the
 *************************************
 
 
+
 **Setting Up**
 
 
@@ -26,7 +27,6 @@ Start for creating an eMAGMA folder with all the files we will use through the t
 The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 2016) MAGMA and auxiliary files can be downloaded from the program website: https://ctg.cncr.nl/software/magma. Two auxiliary files are required: a file with gene locations for protein-coding genes from NCBI and a genome reference file. For this tutorial we use build 37(hg19) that matches the build of the summary data (MDD2018_excluding23andMe) and reference file for European population. Gene location files for build 36, 37, & 38 are available from MAGMA website. You can use wget o curl to import the files directly into your directory example:
 
 
-*************************************
 
 **MAGMA*
     
@@ -56,15 +56,15 @@ The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 20
 **eMAGMA Annotation files*
 
 
-       *Batch1.annotation*
+      *Batch1.annotation*
    
-       *Batch2.annotation*
+      *Batch2.annotation*
    
-       *Batch3.annotation*
+      *Batch3.annotation*
    
-       *Batch4.annotation*
+      *Batch4.annotation*
    
-       *Batch5.annotation*
+      *Batch5.annotation*
  
  
  
@@ -73,7 +73,7 @@ The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 20
 **eMAGMA Co-expression network files*
 
 
-       *network_files.zip*
+      *network_files.zip*
 
 *************************************
 
