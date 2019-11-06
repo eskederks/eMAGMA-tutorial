@@ -49,7 +49,7 @@ The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 20
 
 
 *eMAGMA Annotation files*
-
+*************************************
 
    *Batch1.annotation*
    
@@ -64,9 +64,9 @@ The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 20
 
 
 *eMAGMA Co-expression network files*
+*************************************
 
    *network_files.zip*
-
 
 
 Now that you have all the necessary files go to **Part 1** to begin with the analysis
