@@ -13,7 +13,7 @@ This tutorial is executable in Unix, is assumed that users are familiar with the
 
 
 
-# Setting Up
+**Setting Up
 
 Start for creating an eMAGMA folder with all the files we will use through the tutorial.
        
