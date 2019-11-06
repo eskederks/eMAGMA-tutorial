@@ -45,7 +45,7 @@ The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 20
         https://www.med.unc.edu/pgc/results-and-downloads/mdd/
         
         
-**Notice: If you are using your own data, make sure to download the auxiliary files that correspond to the genome build of your data.**
+Notice: If you are using your own data, make sure to download the auxiliary files that correspond to the genome build of your data.
 
 
 
@@ -74,5 +74,5 @@ The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 20
 
 *************************************
 
-Now that you have all the necessary files go to **Part 1** to begin with the analysis
+Now that you have all the necessary files go to **Part 1** to begin with the analysis.
 
