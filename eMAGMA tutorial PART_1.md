@@ -19,7 +19,7 @@ The three first columns of the input summary data must be in the order: SNP ID, 
 
 
 
-############################################################################################################################
+# 
 
 
 
