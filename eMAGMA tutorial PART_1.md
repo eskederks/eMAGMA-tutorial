@@ -19,8 +19,8 @@ The three first columns of the input summary data must be in the order: SNP ID, 
 
 
 
-# 
-#
+# ***************************************************************************
+
 
 
 **eMAGMA GENE-BASED ASSOCIATION: SNP TO TISSUE SPECIFIC GENES**
