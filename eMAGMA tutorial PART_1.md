@@ -21,7 +21,7 @@ The three first columns of the input summary data must be in the order: SNP ID, 
 
 
 
-**eMAGMA GENE-BASED ASSOCIATION: SNP TO TISSUE SPECIFIC GENES**
+# eMAGMA GENE-BASED ASSOCIATION: SNP TO TISSUE SPECIFIC GENES**
 
 The analysis requires raw genotype data from an appropriate reference sample to model the LD structure. For this purpose, we use the genome reference file for European population [g1000_eur]. This analysis also requires of an annotation file that links SNPs to genes based on physical proximity. Since we would link SNPs to genes based on eQTL regulation, we use annotation files for which we have previously assign SNPs to target genes. These annotation files were generated based on significant (FDR<0.05) SNP-gene associations in GTEx, there are 48 files corresponding to 48 different tissues (see Gering 2009, for further details). The annotation files are provided in the directories Batch1, Batch2, Batch3 and Batch4. Below is the list of files in each directory:
 
