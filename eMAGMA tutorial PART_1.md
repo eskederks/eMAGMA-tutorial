@@ -1,72 +1,70 @@
 # PART 1
 
-**GENE-BASE ANALYSIS WITH MAGMA**
+The tutorial assumes that the eMAGMA files and the program (MAGMA) and auxiliary files are all in the same directory. If your files are in different directories you must add the directory path to the command line. 
 
-#This tutorial assumes that MAGMA and all the files required for the tutorial are in the same directory. If your files are in different directories you must add the directory path to the command line. To begin set your working directory and unzip the files
+    cd /path/to-yourworking folder/eMAGMA
 
-    cd /path/to-your folder.
+Unzip the program folders and the data file magma_v1.07b.zip, NCBI37.3.zip and MDD2018_excluding23andMe (downland this file from the PGC website)
 
-#Unzip the program folders and the data file magma_v1.07b.zip, NCBI37.3.zip and MDD2018_excluding23andMe_short (downland this file from the PGC website)
-  
     unzip *file.zip 
 
-**Annotation* Map SNPs to genes**
+To run the gen-based association we need the P-values from the MDD GWAS summary statistics. Run the following code to extract SNP ID, chromosome, base pair position, and p-value information from the GWAS summary statistics, into a new txt file.
 
-#Annotation is preliminary to the gene association analysis, in this step SNPs from the GWAS summary statistics are mapped to genes in the gene location file. For convenience we start by extracting SNP ID, chromosome and base pair position from the GWAS summary, into a snp-loc file in MAGMA format, we also extracted the p-value information which will be used in a later step.
-  
+
     awk '{print $2,$1,$3,$11}' MDD2018_excluding23andMe > MDD2018_excluding23andMe_short.txt
 
-#It is necessary that the input summary data is organized with the three first columns matching the order: SNP ID, chromosome and base pair position, MAGMA ignores other columns. To run the annotation use the code below, it will generate a genes.annot [MDD_list.genes.annot] file with all SNPs that mapped to a gene and .log file [MDD_list.log] that should be inspected for warning and errors. 
+The three first columns of the input summary data must be in the order: SNP ID, chromosome and base pair position, the program (MAGMA) ignores other columns. 
 
-    ./magma --annotate --snp-loc MDD2018_excluding23andMe_short.txt 
-      --gene-loc NCBI37.3.gene.loc 
-      --out MDD_list
+
+**eMAGMA GENE-BASED ASSOCIATION: SNP TO TISSUE SPECIFIC GENES**
+
+The analysis requires raw genotype data from an appropriate reference sample to model the LD structure. For this purpose, we use the genome reference file for European population [g1000_eur]. This analysis also requires of an annotation file that links SNPs to genes based on physical proximity. Since we would link SNPs to genes based on eQTL regulation, we use annotation files for which we have previously assign SNPs to target genes. These annotation files were generated based on significant (FDR<0.05) SNP-gene associations in GTEx, there are 48 files corresponding to 48 different tissues (see Gering 2009, for further details). The annotation files are provided in the directories Batch1, Batch2, Batch3 and Batch4. Below is the list of files in each directory:
+
+For practical reasons, we will use only the annotation files for brain tissue which are in the directory Batch1. In Batch1, there are 13 annotation files with the tissue name as prefix and the suffix genes.annot. To download Batch1 (Brain tissue data) into a directory named Brain do:
+
+    mkdir Brain 
+    cd Brain 
     
-**GENE-BASED ANALYSIS ON SNP-PVALUE DATA**
+    wget Btch1 to add link!!!
+    unzip Batch1.zip
+    cd ..
 
-#In this step SNPs are assigned to nearest gene and gene-based statistics are computed based on the sum of SNP-log (10) P-values. The analysis requires of raw genotype data, P-value information, sample size and the gene annotation file generated in the previous step. For this tutorial the raw genotype data correspond to the 1000 genome reference file for European population [g1000_eur], P-values were extracted from the MDD GWAS summary data prepared in the previous step [MDD2018_excluding23andMe_short.txt]. The total number of samples for the MDD GWAS is N=307,354. Multiple testing is done using 10000 adaptative permutations (--adap-permp=10000). The output is a genes.out file and a genes.raw file that would be used in the next step.
+Make sure you are back to the eMAGMA folder, to run the association do:
 
-    ./magma --bfile g1000_eur  
-      --gene-annot MDD_list.genes.annot 
-      --pval MDD2018_excluding23andMe_short.txt N=307,354  
-      --gene-settings adap-permp=10000 
-      --out magma
-    
-   **GENE_SET ANALYSIS**
+    for file in eMAGMA/Brain_*genes.annot; 
+    do ./magma --bfile g1000_eur 
+    --gene-annot "$file" 
+    --pval MDD2018_excluding23andMe_short.txt N=307354 
+    --gene-settings adap-permp=10000 
+    --out "$file"_emagma;       
+      done
 
-#This step runs a competitive gene-set analysis as described in ref(xx). Here we test for the association between groups of genes within a tissue and the phenotypes i.e. MDD. The analysis counts for gene size and gene density. The gene sets used in this tutorial are the networks files [normalised.tx] that were generated by refxxxx (xxx or maybe something like details of how the networks were build are provided in xxx) and are freely provided. Each file correspond to genes within a human tissue and gene sets are defined by colours (refxxx). Each file have 2 columns: set and gene ID. The second input on the gene-set anlaysis is the .raw outcome from the gene-based analysis [MDD_genes.raw]. If a gene-set within a network has a significant association with the phenotype the code below outputs a gsa.sets.genes.out file, a magma.gsa.genes.out file and a gsa.outoutputs. For the gene networks that don't have significant association only the gsa.out file is output.
+The above command directs the analysis to be perform in each file on the Brain directory that has the suffix genes.annot. Pvalues are extracted from the MDD GWAS summary data [MDD2018_excluding23andMe_short.txt]. The total number of samples for the MDD GWAS is N=307,354. Multiple testing is done using 10,000 adaptive permutations (--adap-permp=10,000). 
 
-    for file in network_files/*_normalised.txt; do 
-    ./magma --gene-results MDDasso_magma.genes.raw 
-    --set-annot "$file" col=2,1 
-    --out "$file"_MDD_magma
-  
-The code above outputs one significant gene-set file for Thyroid, to see the head of the file do:
-        
-        head Thyroid_entrez_gtex_v7_normalised.txt_MDD_permuta_magma.gsa.sets.genes.out 
-        
- The file looks like this:
-        
-        # ALPHA = 0.05
-        # NUMBER_OF_TESTS = 27
+The analysis outputs a genes.raw file and a genes.out file for each of the input. There would be 13 files with the suffix genes.raw and 13 files with the suffix genes.out. Each of these files will have tissue name and the label_ MDD_emagma as prefix, as example for the Spinal cord file there is: Brain_Spinal_cord_cervical_c-1.genes.annot_emagma_genes.out, Brain_Spinal_cord_cervical_c-1.genes.annot_emagma.genes.raw. The program also generates a log file, example :Brain_Spinal_cord_cervical_c-1.genes.annot_emagma.log. The log file has summary information of the run, i.e. error if any, how many genes were read and how many genes have a valid SNP assigned.
 
-        # _SET1_  VARIABLE = saddlebrown (set)
-        # _SET1_  NGENES = 1072
-        # _SET1_  P-VALUE = 0.000796434
-        _SET1_   GENE        CHR      START       STOP  NSNPS  NPARAM    N        ZSTAT            P  ZFITTED_BASE  ZRESID_BASE
-        _SET1_   26155         1     879583     894679     95      21  307      0.73902      0.21525    0.00033225      0.73869
-        _SET1_   51150         1    1152288    1167447    126      10  307     -0.38593      0.59927    0.00033225     -0.38626
-        _SET1_   54998         1    1309110    1310818      9       5  307        1.237      0.10463    0.00033225       1.2367
+Following the example with the spinal cord, an inspection of the log file shows that 1600 gene definitions were read from the annotation file and 1541 genes have a valid SNPs in genotype data.
 
-        
-The files has information on the significant sets: out of 27 gene-sets MDD associations signals were significanlty enriched in gene-set saddlebrown, with a P-value=0.000796434, this set has 1072 genes, listed in the file. Using grep we can extract the beta and SE values for the significant sets from the gsa.out file. 
+To Extract a list of genes significant assocaited genes, after correcting for multiple testing (Bonferroni correction=0.05/number of genes tested) do:
 
-    grep saddlebrown Thyroid_entrez_gtex_v7_normalised.txt_MDD_permuta_magma.gsa.out
+    for file in  *emagma.genes.out; do awk '{if ($9<=8.86839E-06) print $0, FILENAME}' "$file" >> top_genes.txt; done
 
-To filter out the top associated the genes with a treshold of 0.05 we can do:
+For practical reasons we apply the same threshold (Pvalue<8.86839E-06) to all thirteen brain tissues. This threshold was set using  number of genes of the file with the largest number of genes(5638=Brain_Cerebellum.genes.anno).
+So the correction threshold is 0.05/5638=8.86839E-06.
 
-    sort -n -r -k10 Thyroid_entrez_gtex_v7_normalised.txt_MDD_permuta_magma.gsa.sets.genes.out|awk '{if ($10<=0.05) print $0}' > top_thyroid_MDD_saddlebrown
+NOTICE this is a conservative threshold used for illustration proposes only. For research analysis is recommended to use a specific threshold for each tissue, according with the number of genes tested in each tissue and to correct for the total number of tissues.
 
-This will generated a list of 133 genes that based on gene-proximity are higly associated with MDD. 
+The above code created a file top_genes.txt that has a list of significant associated genes. There are 80 associations listed in the file, the last column of these file shows the name of the file/tissue of the association. 
 
-In the second part of this tutorial we will use eMAGMA to generate a list of genes associated with MDD based on tissue-specific  eQTL information. go to PART2!
+An inspection of the file indicates:
+
+The highest association is shown by the gene 4277       in chromosome  6   gene location 31462054   31478901   1113      23  307354       6.9558   1.7524e-12       0.0001  10000 eMAGMA/Brain_Cerebellar_Hemisphere.genes.annot_emagma_genebased_short.genes.out
+
+
+Notice that some genes may have multiple entries given that a gene can be found in multiple tissues. To know how many genes are significant without including repetitions do: 
+
+    awk '!a[$1]++' top_genes.txt |wc -l 
+
+There are 26 unique genes.
+
+We have identified 80 significant brain tissue-specific associations with MDD, this associations represent 26 unique genes. The genes.out file for each tissue, has information on gene ID, position, the number of SNPs mapped to the gene and the pvalue of the association. The gene-based analysis also generated a raw file for each tissue, this file would be the input for the second part of the tutorial.
