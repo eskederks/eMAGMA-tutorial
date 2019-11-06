@@ -41,7 +41,7 @@ The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 20
 **Notice: If you are using your own data, make sure to download the auxiliary files that correspond to the genome build of your data.
 
 
-*eMAGMA files*
+**eMAGMA files*
 
 *eMAGMA Annotation files*
     
