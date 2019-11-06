@@ -1,42 +1,49 @@
 # eMAGMA-TUTORIAL
 
-#This tutorial is a step by step guide on how to use eMAGMA, an approach to assign SNPs to tissue specific genes as presented in XXXX add reference (which reference to use new one or Gerring 2019 add link!XXX. Here we provide the scripts and files to apply the eMAGMA approach and generate a list of individual genes risk genes and gene-co-expression networks using genome-wide summary statistics. In this tutorial we use the GWAS summary statistics from a GWAS in Major Depression Disorders (MDD), publicly available in the Psychiatric Genomic Consortium (PGC) website. We provide an example with MDD, but you can use the scripts with your own data. The tutorial is divided in two parts: Part 1 Runs MAGMA to assign SNPs to the nearest genes (gene-base analysis) and then run a gene-set analysis of proximity to estimate what set of genes are more highly associated with MDD. Part 2 runs eMAGMA using summary statistics and eQTL data from GTEx project (SNP to tissue specific annotation), to run a gene-base analysis then combined with a gene Co-expression network to assign SNPs to tissue specific genes and estimate what tissue specific genes are more highly associated with MDD.
+#This tutorial is a step by step guide on how to use eMAGMA, an approach to conduct eQTL informed gene-based tests by assigning SNPs to tissue-specific eGenes as presented in Gerring et al. 2019 (link and other reference to be added). Here we provide the scripts and files to apply the eMAGMA approach which generates a list of disease-associated eGenes using genome-wide summary statistics. In this tutorial, we apply eMAGMA to GWAS summary statistics of Major Depression Disorder (MDD); these summary statistics are publicly available from the Psychiatric Genomic Consortium (PGC) website. The tutorial is divided in two parts. Part 1 Runs eMAGMA gene-based analysis of proximity, this analysis integrates a SNP-gene association from GTEx to a GWAS summary data.  SNPs (from the summary data) are assigning to genes based on their association with gene expression. The SNP-gene association from GTEx is a tissue specific annotation, hence we can estimate what genes are more highly associated with MDD at the tissue level. In Part 2 we show how to test enrichment of association in co-expression networks. The aim is to identify groups of genes (modules) that are more highly associated with MDD risk. 
 
-Tissue specific annotation files and Co-expression network files are freely provided with this tutorial. Explanation of the methods and resources used in this tutorial are provided in the publication accompanying this tutorial. *XXXXXRef
+Tissue specific annotation files and Co-expression network files are freely provided with this tutorial. Explanation of the methods and resources used in this tutorial are provided in the publication accompanying this tutorial XXXXXRef-New one
+
+**Requirements* 
+
+This tutorial is executable in Unix, is assumed that users are familiar with the Unix environment and command line. You can type or copy page the commands or re-structure them at your convenience. This is a hands-on tutorial with minimum theoretical explanations. It is essential the user read through the publications that accompany the tutorial (Gerring et al. 2019, other ) as they provide the theoretical background for the analyses. Knowledge of GWAS and GWA-summary analysis is necessary. Maree’s repository (https://github.com/MareesAT/GWA_tutorial offers a detailed guide on GWAS analysis.
 
 
-**FILES and SOFTWARE TO DOWNLOAD**
+**Setting Up*
 
-TThe analysis is done using MAGMA v1.07b (ref) MAGMA and auxiliary files can be downloading from the program website: https://ctg.cncr.nl/software/magma. Two auxiliary files are required: a file with gene locations for protein-coding genes from NCBI and a genome reference file. For this tutorial we use build 37(hg19) that matches the build of the summary data (MDD2018_excluding23andMe) and reference file for European population. Gene location files for build 36, 37, & 38 are available from MAGMA website.
-You can use wget o curl to import the files directly into your directory example:
-
-**MAGMA*
+Start for creating an eMAGMA folder with all the files we will use through the tutorial.
+       
+       cd /path/to-yourworking folder
+        Mkdir eMAGMA
+        cd eMAGMA
         
-        wget https:// https://ctg.cncr.nl/software/MAGMA/prog/magma_v1.07b_static.zip
+The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 2016) MAGMA and auxiliary files can be downloaded from the program website: https://ctg.cncr.nl/software/magma. Two auxiliary files are required: a file with gene locations for protein-coding genes from NCBI and a genome reference file. For this tutorial we use build 37(hg19) that matches the build of the summary data (MDD2018_excluding23andMe) and reference file for European population. Gene location files for build 36, 37, & 38 are available from MAGMA website. You can use wget o curl to import the files directly into your directory example:
 
-*Auxiliary files for 37(hg19)*
+*MAGMA
+    
+    wget https:// https://ctg.cncr.nl/software/MAGMA/prog/magma_v1.07b_static.zip
+
+*Auxiliary files for 37(hg19)
         
-        wget https://ctg.cncr.nl/software/MAGMA/aux_files/NCBI37.3.zip
+    wget https://ctg.cncr.nl/software/MAGMA/aux_files/NCBI37.3.zip
 
-*Reference data*
+*Reference data
+    
+    wget https://ctg.cncr.nl/software/MAGMA/ref_data/g1000_eur.zip
+
+*GWAS summary = MDD2018_ex23andMe from PGC web site: 
         
-        wget https://ctg.cncr.nl/software/MAGMA/ref_data/g1000_eur.zip
-
-*GWAS summary = MDD2018_ex23andMe from PGC web site: https://www.med.unc.edu/pgc/results-and-downloads/mdd/
-
+        https://www.med.unc.edu/pgc/results-and-downloads/mdd/
+        
 **Notice: If you are using your own data, make sure to download the auxiliary files that correspond to the genome build of your data.
+eMAGMA files*
 
-**eMAGMA files**
+*eMAGMA Annotation files
+    
+    need to change files!!!!  
 
-*eMAGMA Annotation files*
+*eMAGMA Co-expression network files
 
-        https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/Brain_annot_genes.zip
-        
-        https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/Whole_Blood.genes.zip  
-        
-*eMAGMA Co-expression network files*
+    https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/network_files.zip 
 
-        https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/network_files.zip 
-        
-
-Now that you have all the neccessary files go to **Part 1** to begin with the analysis.
+Now that you have all the necessary files go to **Part 1** to begin with the analysis.
