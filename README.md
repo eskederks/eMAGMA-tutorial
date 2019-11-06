@@ -28,7 +28,7 @@ The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 20
 
 
 
-**MAGMA*
+*MAGMA*
     
     wget https:// https://ctg.cncr.nl/software/MAGMA/prog/magma_v1.07b_static.zip
 
@@ -50,10 +50,10 @@ The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 20
 
 *************************************
 
-**eMAGMA files**
+**eMAGMA files*
 
 
-**eMAGMA Annotation files**
+**eMAGMA Annotation files*
 
 
    *Batch1.annotation*
