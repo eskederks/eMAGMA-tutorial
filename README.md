@@ -6,12 +6,14 @@ The tutorial is divided in two parts. Part 1 Runs eMAGMA gene-based analysis of 
 
 Tissue specific annotation files and Co-expression network files are freely provided with this tutorial. Explanation of the methods and resources used in this tutorial are provided in the publication accompanying this tutorial XXXXXRef-New one
 
+
 **Requirements** 
 
 This tutorial is executable in Unix, is assumed that users are familiar with the Unix environment and command line. You can type or copy page the commands or re-structure them at your convenience. This is a hands-on tutorial with minimum theoretical explanations. It is essential the user read through the publications that accompany the tutorial (Gerring et al. 2019, other ) as they provide the theoretical background for the analyses. Knowledge of GWAS and GWA-summary analysis is necessary. Maree’s repository (https://github.com/MareesAT/GWA_tutorial offers a detailed guide on GWAS analysis.
 
 
-**Setting Up**
+
+# Setting Up
 
 Start for creating an eMAGMA folder with all the files we will use through the tutorial.
        
