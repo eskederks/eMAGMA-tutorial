@@ -1,0 +1,23 @@
+##setting up the files####
+
+#awk '{print $2,$1,$3,$11,$19}' MDD2018_ex23andMe > MDD2018_ex23andMe_emagma.txt
+
+#awk 'NF==5' MDD2018_ex23andMe_emagma.txt 
+
+
+###############Gene-based eMAGMA!############
+
+./magma --bfile g1000_eur --gene-annot Brain/Brain_Amygdala.genes.annot --pval MDD2018_ex23andMe_emagma2.txt ncol=Neff --gene-settings adap-permp=10000 --out Amygdala_emagma
+
+###########Select significant genes!##########
+
+awk '{if ($9<=3.8431e-5) print $0}' Amygdala_emagma.genes.out > Amygdala_signif_genes.txt
+
+
+################GENE-sets networks analysis!#########
+
+./magma --gene-results Amygdala_emagma.genes.raw --set-annot network_files/Brain_Amygdala_entrez_gtex_v7_normalised.txt col=2,1 --out Amygdala_emagma
+
+
+
+
