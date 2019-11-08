@@ -47,47 +47,23 @@ The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 20
         
 
 Notice: If you are using your own data, make sure to download the auxiliary files that correspond to the genome build of your data.
-This tutorial freely provides files for gene annotation and co-expression networks for 48 tissues. At the end of the tutorial you will be able to apply the eMAGMA approach to your own data using these files.
 
-
-
-Notice: If you are using your own data, make sure to download the auxiliary files that correspond to the genome build of your data.
-
-
-
-
+This tutorial provides gene annotation and co-expression networks for 48 tissues, including 13 brain tissues and whole blood. At the end of the tutorial you will be able to apply the eMAGMA approach to your own data using these files.
 
 **eMAGMA Annotation files**
 
-   *Batch1.annotation
-   
-   
-       Brain_Amygdala.genes.annot                        Brain_Cortex.genes.annot                                                              Brain_Putamen_basal_ganglia.genes.annot
-       Brain_Anterior_cingulate_cortex_BA24.genes.annot  Brain_Frontal_Cortex_BA9.genes.annot                                        
-       Brain_Spinal_cord_cervical_c-1.genes.annot
-       Brain_Caudate_basal_ganglia.genes.annot           Brain_Hippocampus.genes.annot                          
-       Brain_Substantia_nigra.genes.annot
-       Brain_Cerebellar_Hemisphere.genes.annot           Brain_Hypothalamus.genes.annot
-       Brain_Cerebellum.genes.annot                      Brain_Nucleus_accumbens_basal_ganglia.genes.annot
-
-   *Batch2.annotation*
-   
-   *Batch3.annotation*
-   
-   *Batch4.annotation*
-   
-   *Batch5.annotation*
- 
- 
-
+Batch1.annotation
+Batch2.annotation
+Batch3.annotation
+Batch4.annotation
+Batch5.annotation
+Batch5.annotation
 
 **eMAGMA Co-expression network files**
+network_files.zip
 
-
-   *network_files.zip*
-
-
-**eMAGMA tutorial-Amygdala output file**
+**Tutorial Output files**
+Amygdala_outputs
 
 
 *************************************
