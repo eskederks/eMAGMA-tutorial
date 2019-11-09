@@ -15,9 +15,9 @@ If you haven’t yet, unzip the networks.zip file and run the analysis with code
     --set-annot network_files/Brain_Amygdala_entrez_gtex_v7_normalised.txt col=2,1 
     --out Amygdala_emagma 
 
-The log file [Amygdala_emagma.log] shows that 24 gene-set (modules) definitions were read from the input file, of these 23 gene sets containing genes defined in genotype data (containing a total of 1188 unique genes). 
+The log file [Amygdala_emagma.log] shows that 24 gene-set (modules) were read from the input file, of these, 23 gene-sets containing genes defined in genotype data (containing a total of 1188 unique genes). 
 
-The results of the gene-set association analysis are presented in the gsa.out file [Amygdala_emagma.gsa.out ]. In this file we can observer that the smallest P-value=0.03703 is for the module white, formed by 16 genes. 
+The results of the gene-set analysis are presented in the gsa.out file [Amygdala_emagma.gsa.out ]. In this file we can observer that the smallest P-value=0.03703 is for the module white, formed by 16 genes. 
 Below is an example of how  file looks. 
     
     # MEAN_SAMPLE_SIZE = 64134
@@ -32,8 +32,7 @@ Below is an example of how  file looks.
 
 
 
-
  
-After correcting for multiple testing, if significant genes are found, MAGMA generates a genes.sets.out file, with results for the significant set.  Modules in the Amygdala network were not significant, perhaps due to sample size. In fact, with a much larger data set (480,359 indv), using the eMAGMA approach, Gerrin et al., detected 2 significant modules enriched with MDD.
+After correcting for multiple testing, if significant genes are found, MAGMA generates a genes.sets.out file, with results for the significant sets. Modules in the Amygdala network were not significant, perhaps due to sample size. In fact, with a much larger data summary (480,359 indv) Gerrin et al., detected 2 significant modules enriched with MDD. The 2 modules were expressed in brain tissues.
 
 The user is invited to follow the steps in this tutorial to analyse their own data and make use of the annotation files and network files provided here.  We encourage the user to explore the potential that these resources have, to find functional relationships and to mine GWAS summary data.
