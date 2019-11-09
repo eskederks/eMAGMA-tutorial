@@ -14,7 +14,8 @@ Unzip the program folders and the data file magma_v1.07b.zip, NCBI37.3.zip and M
     unzip [filename].zip 
 
 
-To run the gen-based association the P-values from the MDD GWAS summary statistics. Run the following code to extract SNP ID, chromosome, base pair position, and P-value information from the GWAS summary statistics, into a new text file. this file will be use as input for the analysis. 
+To run the gen-based association we need the P-values from the MDD GWAS summary statistics. Execute the following code to extract SNP ID, chromosome, base pair position, and P-value information from the GWAS summary statistics, into a new txt file. 
+ 
 
     awk '{print $2,$1,$3,$11,$19}' MDD2018_ex23andMe > MDD2018_ex23andMe_emagma.txt
     
