@@ -33,6 +33,6 @@ Below is an example of how  file looks.
 
 
  
-After correcting for multiple testing, if significant genes are found, MAGMA generates a genes.sets.out file, with results for the significant sets. Modules in the Amygdala network were not significant, perhaps due to sample size. In fact, with a much larger data summary (480,359 indv) Gerrin et al., detected 2 significant modules enriched with MDD. The 2 modules were expressed in brain tissues.
+After correcting for multiple testing, if significant genes are found, MAGMA generates a genes.sets.out file, with results for the significant sets. Modules in the Amygdala network were not significant.  Gerrin et al.,2009a, present an example of post-analysis when significant modules are detcted. 
 
 The user is invited to follow the steps in this tutorial to analyse their own data and make use of the annotation files and network files provided here.  We encourage the user to explore the potential that these resources have, to find functional relationships and to mine GWAS summary data.
