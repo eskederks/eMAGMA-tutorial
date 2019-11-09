@@ -1,41 +1,28 @@
-# PART 2
+# PART 
 
-#In this part of the tutorial we will use the eMAGMA aproach to generate a list of genes which xxxxx(function is associated with MDDxxxx). Similar to PART 1 of the tutorial we will use MAGMA for the association anlysis. Basically the steps to follow are the same that in PART 1 of the tutorial but instead of doing a SNP to gene annotation follow by gene-level analysis, we will do a SNP to tissue-specific gene annotation and a tissue-specific gene-level analysis.
+# 2eMAGMA GENE-SET ANALYSIS 
 
- 
- **eMAGMA GENE-BASED ASSOCIATION: SNP TO TISSUE SPECIFIC GENES**
+In this step we use the output of the gene-based analysis for the Amygdala, to test what modules within a co-expression network are more highly associated with MDD risk.  The test is carried out using the gene-sets function in MAGMA.
 
-#Here we assign MDD risk SNPs to genes tissue-specific SNP-gene association from GTEx, this is adding eQTL informattion to assigne SNP to genes based on their association with gene expression. We use P-values from MDD, the european reference. the torial provides five batches of tissue-specific SNP-gene files: Batch_1,Batch_2, Batch_3, Whole blood and Brain). 
- 
-    Mkdir Brain
-    wget -P /Brain/ https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/Brain_annot_genes.zip
+The co-expression network files are provided in the folder network_files.zip  
+    https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/network_files.zip
 
-For practical reasons in the tutorial we will use only the annotation files for brain tissue, there are xx annotation files [Brain_genes.annot].  With your own data you can make use of all provided files at your own convenience.
+Details of the assembly of the co-expression networks are given in Gerrin et al., 2019a. Each co-expression network is subdivided into “modules” of highly correlated genes. Each co-expression network file has 2 columns: the modules are represented in the first column and are labelled as a colour; this is just a tag to identify the module or group during the analysis. The second column correspond to the genes ID. 
 
-    for file in Brain/*genes.annot; do 
-    ./magma --bfile g1000_eur 
-    --gene-annot $file 
-    --pval MDD2018_excluding23andMe_short.txt N=307,354 
-    --gene-settings adap-permp=10000 
-    --out $file_MDD_emagma; done
+If you haven’t yet, unzip the networks.zip file and run the analysis with code below:
+
+    ./magma --gene-results Amygdala_emagma.genes.raw 
+    --set-annot network_files/Brain_Amygdala_entrez_gtex_v7_normalised.txt col=2,1 
+    --out Amygdala_emagma 
+
+
+The results of the gene-set association analysis are presented in the gsa.out file [Amygdala_emagma.gsa.out ]. 
     
-Similar to the steps in tutorial 1, the above code outputs a genes.raw file and a genes.out file but in this case we have one file for each  brain tissue enriched for MDD, that is 13 files genes.raw and  files 13 genes.out files. 
- 
-
-**eMAGMA GENE-SET ANALYSIS: Identification of co-expression modules enriched with MDD genes**
-
-To test if genes within a gene set are more highly associated with MDD risk genes than other genes.
-For this step We use agin the network files downloaded in part1  and the genes.raw files generated in the previus step.
-
-    for file1 in network_files/*_normalised.txt; do for file2 in Brain/*MDD_emagma.genes.raw; do 
-     ./magma --gene-results "$file2" 
-     --set-annot "$file1" col=2,1 
-     --out "$file2"_emagma;done;done
- 
- You can now run the script with for the other tissues, replacing the file name that is Batch_1, Batch_2 or so on instead of Brain.
- 
-A gene set file [] is generated for those tissues that have gene sets significanlty associated with MDD. In total xxx(for brsin only was 12) have significant sets. Now we will select sets that are more higly assocaited 
-
-(I am hera at the moment! Not very clear about the results I am getting, waiting for Zacks confirmation on the code , to fix and add final reults and code on extracting info for all tissues)
- 
-
+    # MEAN_SAMPLE_SIZE = 64134
+    # TOTAL_GENES = 1258
+    # TEST_DIRECTION = one-sided, positive (set), two-sided (covar)
+    # CONDITIONED_INTERNAL = gene size, gene density, sample size, inverse mac, log(gene size), log(gene density), log(sample size),   
+    log(inverse mac)
+    VARIABLE            TYPE  NGENES         BETA     BETA_STD           SE            P
+    black                SET      55    0.0073145    0.0014962      0.13874      0.47898
+    blue                 SET     141     -0.05808     -0.01833     0.086617      0.74868
