@@ -40,7 +40,8 @@ For practical reasons, we will use only the annotation files for the Amygdala, w
 
 Make sure you are back to the eMAGMA folder. To run the association do:
 
-    ./magma --bfile g1000_eur --gene-annot Brain/Brain_Amygdala.genes.annot --pval MDD2018_ex23andMe_emagma2.txt ncol=Neff --gene-settings adap-permp=10000 --out Amygdala_emagma      
+    ./magma --bfile g1000_eur --gene-annot Brain/Brain_Amygdala.genes.annot 
+    --pval MDD2018_ex23andMe_emagma2.txt ncol=Neff --gene-settings adap-permp=10000 --out Amygdala_emagma      
      
 
 The above command indicates: Brain_Amygdala.genes.annot, is the input file for the analysis,  P-values are extracted from the MDD GWAS summary data [MDD2018_ex23andMe_emagma.txt]. The effective number of samples is in column Neff. Multiple testing is done using 10,000 adaptive permutations (--adap-permp=10,000).
@@ -74,6 +75,7 @@ The above code generates a list [Amygdala_signif_genes.tx] of four significant g
     
 The highest association is shown by the gene ID 11118, P-value=1.0573e-08, this gene is located in Chromosome 6:26365387 -26378548 and is mapped by 223 SNPs.  Two other genes in chromosome 6 and one gene in chromosome 4 are also significant for MDD.
 
-The gene-based eMAGMA analysis, identified four genes expressed in the Amygdala that show a high association with MDD.  The information generated from this analysis can be used to investigate biological pathways and functions of these genes. 
+It is done! you have generated a list of eGenes that are expressed in the Amygdala and also are signifacnt assoctiated with MDD. The information generated from this analysis can be used to investigate biological pathways and functions of these genes. 
 
+To take this analysis one step further proceed to Part 2!
 
