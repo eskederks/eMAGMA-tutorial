@@ -78,10 +78,10 @@ This tutorial provides gene annotation and co-expression networks for 48 tissues
 Now that you have all the necessary files go to **Part 1** to begin the analysis.
 
 
+
+
+
 **References**
-
-
-
 
 *a.Gerring ZF, Gamazon ER, Derks EM, for the Major Depressive Disorder Working Group of the Psychiatric Genomics Consortium (2019) A gene co-expression network-based analysis of multiple brain tissues reveals novel genes and molecular pathways underlying major depression. PLOS Genetics 15(7): e1008245. https://doi.org/10.1371/journal.pgen.1008245*
 
