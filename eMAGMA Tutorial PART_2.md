@@ -15,10 +15,9 @@ If you haven’t yet, unzip the networks.zip file and run the analysis with code
     --set-annot network_files/Brain_Amygdala_entrez_gtex_v7_normalised.txt col=2,1 
     --out Amygdala_emagma 
 
-The log file [Amygdala_emagma.log] shows that 24 gene-set (modules) were read from the input file, of these, 23 gene-sets containing genes defined in genotype data (containing a total of 1188 unique genes). 
+The log file [Amygdala_emagma.log] shows that 24 gene-set (modules) were read from the input file, of these, 23 gene-sets contain genes defined in the genotype data (containing a total of 1188 unique genes). 
 
-The results of the gene-set analysis are presented in the gsa.out file [Amygdala_emagma.gsa.out ]. In this file we can observer that the smallest P-value=0.03703 is for the module white, formed by 16 genes. 
-Below is an example of how  file looks. 
+The results of the gene-set analysis are presented in the gsa.out file [Amygdala_emagma.gsa.out ]. This file shows that the smallest P-value=0.03703 is for the module: white, formed by 16 genes. Below is an example of how the file looks. 
     
     # MEAN_SAMPLE_SIZE = 64134
     # TOTAL_GENES = 1258
@@ -33,6 +32,6 @@ Below is an example of how  file looks.
 
 
  
-After correcting for multiple testing, if significant genes are found, MAGMA generates a genes.sets.out file, with results for the significant sets. Modules in the Amygdala network were not significant.  Gerrin et al.,2009a, present an example of post-analysis when significant modules are detcted. 
+After correcting for multiple testing, if significant genes are found, MAGMA generates a genes.sets.out file, with results for the significant sets. Modules in the Amygdala network are not significant.  Gerrin et al.,2009a, present an example of post-analysis when significant modules are detected. 
 
 The user is invited to follow the steps in this tutorial to analyse their own data and make use of the annotation files and network files provided here.  We encourage the user to explore the potential that these resources have, to find functional relationships and to mine GWAS summary data.
