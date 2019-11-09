@@ -2,6 +2,8 @@
 
 **eMAGMA GENE-BASED ASSOCIATION**
 
+*Input data*
+
 The tutorial assumes that the eMAGMA files, the program (MAGMA) and auxiliary files are all in the same directory. If your files are in different directories you must add the directory path to the command line.
 
     cd /path/yourworking folder/eMAGMA
@@ -26,7 +28,7 @@ The first three columns of the input summary data should know be  in the order: 
 **************************************************************************************************
 
 
-**eMAGMA GENE-BASED ASSOCIATION: SNP TO TISSUE SPECIFIC GENES**
+**Analysis**
 
 
 The analysis requires raw genotype data from an appropriate reference sample to model the LD structure. For this purpose, we use the genome reference file for European population [g1000_eur]. This analysis also requires an annotation file that links SNPs to genes based on physical proximity. Since we are linking SNPs to genes based on eQTL information, we use annotation files for which we have previously assigned SNPs to target genes. These annotation files were generated based on significant (FDR<0.05) SNP-gene associations in GTEx, (see Gering 2009b, for further details). The annotation files are provided in the directories Batch1, Batch2, Batch3 and Batch4, Batch5 and Batch6. 
