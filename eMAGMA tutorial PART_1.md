@@ -19,11 +19,11 @@ To run the gen-based association we need the P-values from the MDD GWAS summary 
 
     awk '{print $2,$1,$3,$11,$19}' MDD2018_ex23andMe > MDD2018_ex23andMe_emagma.txt
     
-Then remove any lines that has missing data. 
+Then remove the lines that have missing data. 
     
     awk 'NF==5' MDD2018_ex23andMe_emagma.tx
 
-The first three columns of the input summary data should know be  in the order: SNP ID, chromosome and base pair position. 
+The first three columns of the input summary data should now be in the order: SNP ID, chromosome and base pair position. 
 
 
 **************************************************************************************************
@@ -57,7 +57,7 @@ The above command indicates: Brain_Amygdala.genes.annot, is the input file for t
 The program also generates a log file [Amygdala_emagma.log]. The log file has summary information of the run, i.e. errors if any, how many genes were read and how many genes have a valid SNP assigned. An inspection of the Amygdala_emagma.log, shows that 1301 genes definitions were read from the annotation file and 1258 genes have valid SNPs in genotype data.
 
 The analysis outputs a genes.raw [Amygdala_emagma.genes.raw] file and a genes.out [Amygdala_emagma.genes.out] file. 
-The genes.raw file contains results and correlations of the analysis and it would be use later in PART 2 of the tutorial. 
+The genes.raw file contains results and correlations of the analysis and it will be used later in PART 2 of the tutorial.
 
 The genes.out files have the result in an easy to read format. Below is an example of the genes.out file, it has information on gene ID, position, the number of SNPs mapped to the gene, the P-value of the association and the P-value of the permutation.
 
@@ -83,7 +83,7 @@ The above code generates a list [Amygdala_signif_genes.tx] of four significant g
     
 The highest association is shown by the gene ID 11118, P-value=1.0573e-08, this gene is located in Chromosome 6:26365387 -26378548 and is mapped by 223 SNPs.  Two other genes in chromosome 6 and one gene in chromosome 4 are also significant for MDD.
 
-It is done! you have generated a list of eGenes that are expressed in the Amygdala and also are signifacnt assoctiated with MDD. The information generated from this analysis can be used to investigate biological pathways and functions of these genes. 
+It is done! you have generated a list of eGenes that are expressed in the Amygdala and have a significant assoctiation with MDD. The information generated from this analysis can be used to investigate biological pathways and functions of these genes. 
 
 To take this analysis one step further proceed to Part 2!
 
