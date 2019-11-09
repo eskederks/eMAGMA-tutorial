@@ -1,6 +1,6 @@
-# PART 
+# PART 2
 
-# 2eMAGMA GENE-SET ANALYSIS 
+**eMAGMA GENE-SET ANALYSIS**
 
 In this step we use the output of the gene-based analysis for the Amygdala, to test what modules within a co-expression network are more highly associated with MDD risk.  The test is carried out using the gene-sets function in MAGMA.
 
