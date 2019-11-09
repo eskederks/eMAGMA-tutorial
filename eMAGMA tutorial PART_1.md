@@ -1,5 +1,7 @@
 # PART 1
 
+**eMAGMA GENE-BASED ASSOCIATION**
+
 The tutorial assumes that the eMAGMA files, the program (MAGMA) and auxiliary files are all in the same directory. If your files are in different directories you must add the directory path to the command line.
 
     cd /path/yourworking folder/eMAGMA
