@@ -40,8 +40,11 @@ For practical reasons, we will use only the annotation files for the Amygdala, w
 
 Make sure you are back to the eMAGMA folder. To run the association do:
 
-    ./magma --bfile g1000_eur --gene-annot Brain/Brain_Amygdala.genes.annot 
-    --pval MDD2018_ex23andMe_emagma2.txt ncol=Neff --gene-settings adap-permp=10000 --out Amygdala_emagma      
+    ./magma --bfile g1000_eur 
+    --gene-annot Brain/Brain_Amygdala.genes.annot 
+    --pval MDD2018_ex23andMe_emagma2.txt ncol=Neff 
+    --gene-settings adap-permp=10000 
+    --out Amygdala_emagma      
      
 
 The above command indicates: Brain_Amygdala.genes.annot, is the input file for the analysis,  P-values are extracted from the MDD GWAS summary data [MDD2018_ex23andMe_emagma.txt]. The effective number of samples is in column Neff. Multiple testing is done using 10,000 adaptive permutations (--adap-permp=10,000).
