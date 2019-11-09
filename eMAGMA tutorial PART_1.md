@@ -1,23 +1,24 @@
 # PART 1
 
-The tutorial assumes that the eMAGMA files and the program (MAGMA) and auxiliary files are all in the same directory. If your files are in different directories you must add the directory path to the command line. 
+The tutorial assumes that the eMAGMA files, the program (MAGMA) and auxiliary files are all in the same directory. If your files are in different directories you must add the directory path to the command line.
 
-    cd /path/to-yourworking folder/eMAGMA
+    cd /path/yourworking folder/eMAGMA
 
 
-Unzip the program folders and the data file magma_v1.07b.zip, NCBI37.3.zip and MDD2018_excluding23andMe (downland this file from the PGC website)
+Unzip the program folders and the data file magma_v1.07b.zip, NCBI37.3.zip and MDD2018_excluding23andMe (download this file from the PGC website).
     
-    unzip *file.zip 
+    unzip [filename].zip 
 
 
-To run the gen-based association we need the P-values from the MDD GWAS summary statistics. Run the following code to extract SNP ID, chromosome, base pair position, and p-value information from the GWAS summary statistics, into a new txt file.
+To run the gen-based association the P-values from the MDD GWAS summary statistics. Run the following code to extract SNP ID, chromosome, base pair position, and P-value information from the GWAS summary statistics, into a new text file. this file will be use as input for the analysis. 
 
-    awk '{print $2,$1,$3,$11}' MDD2018_excluding23andMe > MDD2018_excluding23andMe_short.txt
+    awk '{print $2,$1,$3,$11,$19}' MDD2018_ex23andMe > MDD2018_ex23andMe_emagma.txt
+    
+Then remove any lines that has missing data. 
+    
+    awk 'NF==5' MDD2018_ex23andMe_emagma.tx
 
-
-The three first columns of the input summary data must be in the order: SNP ID, chromosome and base pair position, the program (MAGMA) ignores other columns. 
-
-
+The first three columns of the input summary data should know be  in the order: SNP ID, chromosome and base pair position. 
 
 
 **************************************************************************************************
@@ -26,63 +27,53 @@ The three first columns of the input summary data must be in the order: SNP ID, 
 **eMAGMA GENE-BASED ASSOCIATION: SNP TO TISSUE SPECIFIC GENES**
 
 
-The analysis requires raw genotype data from an appropriate reference sample to model the LD structure. For this purpose, we use the genome reference file for European population [g1000_eur]. This analysis also requires of an annotation file that links SNPs to genes based on physical proximity. Since we would link SNPs to genes based on eQTL regulation, we use annotation files for which we have previously assign SNPs to target genes. These annotation files were generated based on significant (FDR<0.05) SNP-gene associations in GTEx, there are 48 files corresponding to 48 different tissues (see Gering 2009, for further details). The annotation files are provided in the directories Batch1, Batch2, Batch3 and Batch4. Below is the list of files in each directory:
+The analysis requires raw genotype data from an appropriate reference sample to model the LD structure. For this purpose, we use the genome reference file for European population [g1000_eur]. This analysis also requires an annotation file that links SNPs to genes based on physical proximity. Since we are linking SNPs to genes based on eQTL information, we use annotation files for which we have previously assigned SNPs to target genes. These annotation files were generated based on significant (FDR<0.05) SNP-gene associations in GTEx, (see Gering 2009b, for further details). The annotation files are provided in the directories Batch1, Batch2, Batch3 and Batch4, Batch5 and Batch6. 
 
-For practical reasons, we will use only the annotation files for the Amygdala, which is in the directory Batch1. In Batch1, there are 13 annotation files with the tissue name as prefix and the suffix genes.annot. To download Batch1 (Brain tissue data) into a directory named Brain do:
+For practical reasons, we will use only the annotation files for the Amygdala, which is in the directory Batch1. In Batch1, there are 13 annotation files with the tissue name as prefix and the suffix genes.annot. To download Batch1 into a directory named Brain do:
+
 
     mkdir Brain 
     cd Brain 
-    
-    wget Btch1 to add link!!!
+    wget https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/Batch1.annot.zip
     unzip Batch1.zip
     cd ..
 
-Make sure you are back to the eMAGMA folder, to run the association do:
+Make sure you are back to the eMAGMA folder. To run the association do:
 
-    ./magma --bfile g1000_eur 
-    --gene-annot Brain/Amygdalaxxx" 
-    --pval MDD2018_excluding23andMe_short.txt ncol=[N_COL]
-    --gene-settings adap-permp=10000 
-    --out emagma      
+    ./magma --bfile g1000_eur --gene-annot Brain/Brain_Amygdala.genes.annot --pval MDD2018_ex23andMe_emagma2.txt ncol=Neff --gene-settings adap-permp=10000 --out Amygdala_emagma      
      
 
-The above command directs the analysis to be perform in each file on the Brain directory that has the suffix genes.annot. Pvalues are extracted from the MDD GWAS summary data [MDD2018_excluding23andMe_short.txt]. The effective number of samples is in column xxx total. Multiple testing is done using 10,000 adaptive permutations (--adap-permp=10,000). 
+The above command indicates: Brain_Amygdala.genes.annot, is the input file for the analysis,  P-values are extracted from the MDD GWAS summary data [MDD2018_ex23andMe_emagma.txt]. The effective number of samples is in column Neff. Multiple testing is done using 10,000 adaptive permutations (--adap-permp=10,000).
 
-The analysis outputs a genes.raw xxxx file and a genes.out xxxx file for each of the input.  Brain_Spinal_cord_cervical_c-1.genes.annot_emagma.genes.raw. 
+The program also generates a log file [Amygdala_emagma.log]. The log file has summary information of the run, i.e. errors if any, how many genes were read and how many genes have a valid SNP assigned. An inspection of the Amygdala_emagma.log, shows that 1301 genes definitions were read from the annotation file and 1258 genes have valid SNPs in genotype data.
 
-Below is an example of the a genes.out file, it has information on gene ID, position, the number of SNPs mapped to the gene and the pvalue of the association and the pvalue of the permutation. 
+The analysis outputs a genes.raw [Amygdala_emagma.genes.raw] file and a genes.out [Amygdala_emagma.genes.out] file. 
+The genes.raw file contains results and correlations of the analysis and it would be use later in PART 2 of the tutorial. 
 
-    GENE       CHR      START       STOP  NSNPS  NPARAM       N        ZSTAT            P        PERMP  NPERM
-    441869       1    1353800    1356824     23       4  307354     -0.35438      0.63847        0.639   1000
-    219293       1    1378152    1405538     56       4  307354      0.44829      0.32697        0.267   1000
-    83858        1    1407139    1444852     85       6  307354     -0.68153      0.75223        0.782   1000
+The genes.out files have the result in an easy to read format. Below is an example of the genes.out file, it has information on gene ID, position, the number of SNPs mapped to the gene, the P-value of the association and the P-value of the permutation.
 
-
-The program also generates a log file, example :Brain_Spinal_cord_cervical_c-1.genes.annot_emagma.log. The log file has summary information of the run, i.e. error if any, how many genes were read and how many genes have a valid SNP assigned.
-
-Following the example with the Amygdalaxxxx, an inspection of the log file shows that xxx1600 gene definitions were read from the annotation file and xxx1541 genes have a valid SNPs in genotype data.
+    GENE       CHR      START       STOP  NSNPS  NPARAM      N        ZSTAT            P        PERMP  NPERM
+    26155        1     879583     894679      6       2  38689     -0.47386       0.6822        0.692   1000
+    54991        1    1017198    1051736     14       1  61363      0.63601      0.26238        0.248   1000
 
 
-To Extract a list of genes significant assocaited genes, after correcting for multiple testing (Bonferroni correction=0.05/number of genes tested) do:
 
-    awk '{if ($9<=8.86839E-06) print $0 }' "xxxx" > top_gene-based_emagma.txt; done
+To extract a list of significant associated genes, after correcting for multiple testing (Bonferroni correction=0.05/number of genes tested) do:
+
+
+    awk '{if ($9<=3.8431e-5) print $0}' Amygdala_emagma.genes.out > Amygdala_signif_genes.txt
     
 
-The above code created a file top_gene-based_emagma.txt that has a list of significant associated genes. There are xxx80 associations listed in the file
+The above code generates a list [Amygdala_signif_genes.tx] of four significant genes. 
 
-An inspection of the file indicates:
+    GENE       CHR      START       STOP  NSNPS  NPARAM      N        ZSTAT            P        PERMP  NPERM
+    10463        4   41992516   42089551      1       1  54271       4.1106    1.973e-05       0.0001  10000
+    11118        6   26365387   26378548    223       6  68311       5.6024   1.0573e-08       0.0001  10000
+    64288        6   28292514   28321972     48       3  66367       4.5078   3.2753e-06       0.0001  10000
+    720          6   31949834   31970457    345       9  65285       4.0559   2.4967e-05       0.0002  10000
+    
+The highest association is shown by the gene ID 11118, P-value=1.0573e-08, this gene is located in Chromosome 6:26365387 -26378548 and is mapped by 223 SNPs.  Two other genes in chromosome 6 and one gene in chromosome 4 are also significant for MDD.
 
-    The highest association is shown by the gene ID 4277  
-    the gene is located in chromosome  6:31462054-31478901
-    The gene is mapped by xxx SNPS       
-    Pvalue  of assocaition 1.7524e-12      
-    tissue: eMAGMA/Brain_Cerebellar_Hemisphere.genes.annot_emagma_genebased_short.genes.out neeed to fix !!!
+The gene-based eMAGMA analysis, identified four genes expressed in the Amygdala that show a high association with MDD.  The information generated from this analysis can be used to investigate biological pathways and functions of these genes. 
 
 
-Notice that some genes may have multiple entries given that a gene can be found in multiple tissues. To know how many genes are significant without including repetitions do: 
-
-    awk '!a[$1]++' top_genes.txt |wc -l 
-
-There are xxx unique genes.
-
-We have identified xxx significant brain tissue-specific associations with MDD, this associations represent xxx unique genes. The gene-based analysis also generated a raw file for each tissue, this file would be the input for the second part of the tutorial.
