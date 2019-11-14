@@ -134,7 +134,7 @@ Whole_Blood_entrez_gtex_v7_normalised.txt*
 
 
 
-**Tutorial Output files:**
+**Tutorial Output files**
 
  **Amygdala_outputs:**
  
