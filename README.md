@@ -57,17 +57,42 @@ This tutorial provides gene annotation and co-expression networks for 48 tissues
 
 **eMAGMA Annotation files for 48 tissues:**
 
- *Batch1.annotation*
+ **Batch1.annotation**
+Brain_Amygdala.genes.annot                        Brain_Hippocampus.genes.annot
+Brain_Anterior_cingulate_cortex_BA24.genes.annot  Brain_Hypothalamus.genes.annot
+Brain_Caudate_basal_ganglia.genes.annot           Brain_Nucleus_accumbens_basal_ganglia.genes.annot
+Brain_Cerebellar_Hemisphere.genes.annot           Brain_Putamen_basal_ganglia.genes.annot
+Brain_Cerebellum.genes.annot                      Brain_Spinal_cord_cervical_c-1.genes.annot
+Brain_Cortex.genes.annot                          Brain_Substantia_nigra.genes.annot
+Brain_Frontal_Cortex_BA9.genes.annot
 
- *Batch2.annotation*
+ **Batch2.annotation**
+Adipose_Subcutaneous.genes.annot      Artery_Aorta.genes.annot     Breast_Mammary_Tissue.genes.annot
+Adipose_Visceral_Omentum.genes.annot  Artery_Coronary.genes.annot
+Adrenal_Gland.genes.annot             Artery_Tibial.genes.annot
 
- *Batch3.annotation*
 
- *Batch4.annotation*
+ **Batch3.annotation**
+Cells_EBV-transformed_lymphocytes.genes.annot  Esophagus_Gastroesophageal_Junction.genes.annot
+Cells_Transformed_fibroblasts.genes.annot      Esophagus_Mucosa.genes.annot
+Colon_Sigmoid.genes.annot                      Esophagus_Muscularis.genes.annot
+Colon_Transverse.genes.annot
 
- *Batch5.annotation*
 
- *Batch5.annotation*
+ **Batch4.annotation**
+Heart_Atrial_Appendage.genes.annot  Liver.genes.annot          Minor_Salivary_Gland.genes.annot 
+Nerve_Tibial.genes.annot            Heart_Left_Ventricle.genes.annot    
+Lung.genes.annot                    Muscle_Skeletal.genes.annot 
+
+ **Batch5.annotation**
+Pancreas.genes.annot   Skin_Not_Sun_Exposed_Suprapubic.genes.annot  Spleen.genes.annot
+Pituitary.genes.annot  Skin_Sun_Exposed_Lower_leg.genes.annot       Stomach.genes.annot
+Prostate.genes.annot   Small_Intestine_Terminal_Ileum.genes.annot
+
+ **Batch6.annotation**
+Ovary.genes.annot  Testis.genes.annot  
+Thyroid.genes.annot  Uterus.genes.annot  
+Vagina.genes.annot  Whole_Blood.genes.annot
 
 **eMAGMA Co-expression network files for 48 tissues:**
 
