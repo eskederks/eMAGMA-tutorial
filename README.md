@@ -58,7 +58,9 @@ This tutorial provides gene annotation and co-expression networks for 48 tissues
 **eMAGMA Annotation files for 48 tissues:**
 
  **Batch1.annotation**
-Brain_Amygdala.genes.annot                        Brain_Hippocampus.genes.annot
+ 
+Brain_Amygdala.genes.annot
+Brain_Hippocampus.genes.annot
 Brain_Anterior_cingulate_cortex_BA24.genes.annot  Brain_Hypothalamus.genes.annot
 Brain_Caudate_basal_ganglia.genes.annot           Brain_Nucleus_accumbens_basal_ganglia.genes.annot
 Brain_Cerebellar_Hemisphere.genes.annot           Brain_Putamen_basal_ganglia.genes.annot
