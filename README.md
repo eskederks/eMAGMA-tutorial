@@ -79,10 +79,11 @@ Heart_Atrial_Appendage.genes.annot, Liver.genes.annot, Minor_Salivary_Gland.gene
  **Batch6.annotation:**
 *Ovary.genes.annot, Testis.genes.annot, Thyroid.genes.annot  Uterus.genes.annot, Vagina.genes.annot, Whole_Blood.genes.annot.*
 
+
 **eMAGMA Co-expression network files for 48 tissues:**
 
- *network_files.zip*
-Adipose_Subcutaneous_entrez_gtex_v7_normalised.txt
+ **network_files.zip**
+*Adipose_Subcutaneous_entrez_gtex_v7_normalised.txt
 Adipose_Visceral_Omentum_entrez_gtex_v7_normalised.txt
 Adrenal_Gland_entrez_gtex_v7_normalised.txt
 Artery_Aorta_entrez_gtex_v7_normalised.txt
@@ -129,7 +130,7 @@ Testis_entrez_gtex_v7_normalised.txt
 Thyroid_entrez_gtex_v7_normalised.txt
 Uterus_entrez_gtex_v7_normalised.txt
 Vagina_entrez_gtex_v7_normalised.txt
-Whole_Blood_entrez_gtex_v7_normalised.txt
+Whole_Blood_entrez_gtex_v7_normalised.txt*
 
 **Tutorial Output files:**
 
