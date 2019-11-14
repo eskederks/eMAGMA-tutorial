@@ -57,25 +57,25 @@ This tutorial provides gene annotation and co-expression networks for 48 tissues
 
 **eMAGMA Annotation files for 48 tissues:**
 
-*Batch1.annotation*
+ *Batch1.annotation*
 
-*Batch2.annotation*
+ *Batch2.annotation*
 
-*Batch3.annotation*
+ *Batch3.annotation*
 
-*Batch4.annotation*
+ *Batch4.annotation*
 
-*Batch5.annotation*
+ *Batch5.annotation*
 
-*Batch5.annotation*
+ *Batch5.annotation*
 
 **eMAGMA Co-expression network files for 48 tissues:**
 
-*network_files.zip*
+ *network_files.zip*
 
 **Tutorial Output files:**
 
-*Amygdala_outputs*
+ *Amygdala_outputs*
 
 
 *************************************
