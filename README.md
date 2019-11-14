@@ -149,7 +149,7 @@ Amygdala_signif_genes.txt.*
 
 **References**
 
-**a** eMAGMA: An eQTL-informed method to identify risk genes using genome-wide association study summary statistics.
+**a** Zachary F Gerring, Angela Mina-Vargas, Nicholas G Martin2, Eric R Gamazon3-5, Eske M Derks. eMAGMA: An eQTL-informed method to identify risk genes using genome-wide association study summary statistics. (in preparation).
 
 **b** Gerring ZF, Gamazon ER, Derks EM, for the Major Depressive Disorder Working Group of the Psychiatric Genomics Consortium (2019) A gene co-expression network-based analysis of multiple brain tissues reveals novel genes and molecular pathways underlying major depression. PLOS Genetics 15(7): e1008245. https://doi.org/10.1371/journal.pgen.1008245*
 
