@@ -19,10 +19,6 @@ To run the gene-based association we need the P-values from the MDD GWAS summary
 
     awk '{print $2,$1,$3,$11,$19}' MDD2018_ex23andMe > MDD2018_ex23andMe_emagma.txt
     
-There are 61 lines in the data set that are missing informattion for column 19 (NeFF) to remove those lines do:
-    
-    awk 'NF==5' MDD2018_ex23andMe_emagma.txt
-
 The first three columns of the input summary data should now be in the order: SNP ID, chromosome and base pair position. 
 
 
@@ -66,14 +62,12 @@ The genes.out files have the result in an easy to read format. Below is an examp
     54991        1    1017198    1051736     14       1  61363      0.63601      0.26238        0.248   1000
 
 
-
-To extract a list of significant associated genes, after correcting for multiple testing (Bonferroni correction=0.05/number of genes tested) use:
-
+To correct for multiple testing using Bonferroni correction (P-value<=0.05/number of genes tested=3.8431e-5), and extract a list of significant associated genes use:
 
     awk '{if ($9<=3.8431e-5) print $0}' Amygdala_emagma.genes.out > Amygdala_signif_genes.txt
     
 
-The above code generates a list [Amygdala_signif_genes.tx] of four significant genes. 
+The above code generates a list [Amygdala_signif_genes.tx] of four significant genes (p<=3.8431e-5). 
 
     GENE       CHR      START       STOP  NSNPS  NPARAM      N        ZSTAT            P        PERMP  NPERM
     10463        4   41992516   42089551      1       1  54271       4.1106    1.973e-05       0.0001  10000
