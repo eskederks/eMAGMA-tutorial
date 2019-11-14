@@ -71,7 +71,7 @@ Colon_Transverse.genes.annot.*
 
 
  **Batch4.annotation:**
-Heart_Atrial_Appendage.genes.annot, Liver.genes.annot, Minor_Salivary_Gland.genes.annot, Nerve_Tibial.genes.annot, Heart_Left_Ventricle.genes.annot, Lung.genes.annot, Muscle_Skeletal.genes.annot.*
+*Heart_Atrial_Appendage.genes.annot, Liver.genes.annot, Minor_Salivary_Gland.genes.annot, Nerve_Tibial.genes.annot, *Heart_Left_Ventricle.genes.annot, Lung.genes.annot, Muscle_Skeletal.genes.annot.*
 
  **Batch5.annotation:**
 *Pancreas.genes.annot, Skin_Not_Sun_Exposed_Suprapubic.genes.annot, Spleen.genes.annot, Pituitary.genes.annot, Skin_Sun_Exposed_Lower_leg.genes.annot, Stomach.genes.annot, Prostate.genes.annot, Small_Intestine_Terminal_Ileum.genes.annot.*
@@ -132,10 +132,16 @@ Uterus_entrez_gtex_v7_normalised.txt
 Vagina_entrez_gtex_v7_normalised.txt
 Whole_Blood_entrez_gtex_v7_normalised.txt*
 
+
+
 **Tutorial Output files:**
 
- *Amygdala_outputs*
-
+ **Amygdala_outputs**
+*Amygdala_emagma.genes.out
+Amygdala_emagma.genes.raw
+Amygdala_emagma.gsa.out
+Amygdala_emagma.log
+Amygdala_signif_genes.txt*
 
 *************************************
 
