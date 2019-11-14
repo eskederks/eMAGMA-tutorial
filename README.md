@@ -137,11 +137,11 @@ Whole_Blood_entrez_gtex_v7_normalised.txt*
 **Tutorial Output files:**
 
  **Amygdala_outputs:**
-*Amygdala_emagma.genes.out
-Amygdala_emagma.genes.raw
-Amygdala_emagma.gsa.out
-Amygdala_emagma.log
-Amygdala_signif_genes.txt*
+*Amygdala_emagma.genes.out,
+Amygdala_emagma.genes.raw,
+Amygdala_emagma.gsa.out,
+Amygdala_emagma.log,
+Amygdala_signif_genes.txt.*
 
 *************************************
 
