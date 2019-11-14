@@ -136,7 +136,7 @@ Whole_Blood_entrez_gtex_v7_normalised.txt*
 
 **Tutorial Output files:**
 
- **Amygdala_outputs:** https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/Amygdala_outputs.zip
+ **Amygdala_outputs:**
  
 *Amygdala_emagma.genes.out,
 Amygdala_emagma.genes.raw,
