@@ -82,7 +82,7 @@ Colon_Transverse.genes.annot.*
 
 **eMAGMA Co-expression network files for 48 tissues:**
 
- **network_files.zip**
+ **network_files.zip:**
 *Adipose_Subcutaneous_entrez_gtex_v7_normalised.txt
 Adipose_Visceral_Omentum_entrez_gtex_v7_normalised.txt
 Adrenal_Gland_entrez_gtex_v7_normalised.txt
@@ -136,7 +136,7 @@ Whole_Blood_entrez_gtex_v7_normalised.txt*
 
 **Tutorial Output files:**
 
- **Amygdala_outputs**
+ **Amygdala_outputs:**
 *Amygdala_emagma.genes.out
 Amygdala_emagma.genes.raw
 Amygdala_emagma.gsa.out
