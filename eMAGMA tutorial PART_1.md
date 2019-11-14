@@ -34,7 +34,7 @@ The first three columns of the input summary data should now be in the order: SN
 
 The analysis requires raw genotype data from an appropriate reference sample to model the LD structure. For this purpose, we use the genome reference file for the European population [g1000_eur]. Since we are linking SNPs to genes based on eQTL information, we use annotation files for which we have previously assigned SNPs to target eGenes. These annotation files were generated based on significant (FDR<0.05) SNP-gene associations in GTEx, (see Gering 2009b, for further details). The annotation files are provided in the folders Batch1, Batch2, Batch3 and Batch4, Batch5 and Batch6. 
 
-For practical reasons, we will use only the annotation files for the Amygdala, which is in the directory Batch1. In Batch1, there are 13 annotation files with the tissue name as prefix and the suffix genes.annot. To download Batch1 into a directory named Brain do:
+For practical reasons, we will use only the annotation files for the Amygdala, which is in the directory Batch1. In Batch1, there are 13 annotation files with the tissue name as prefix and the suffix genes.annot. To download Batch1 into a directory named Brain use:
 
 
     mkdir Brain 
