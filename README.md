@@ -145,13 +145,6 @@ Amygdala_signif_genes.txt.*
 
 *************************************
 
-Now that you have all the necessary files go to **Part 1** to begin the analysis.
-
-
-
-
-****************************************
-
 
 
 **References**
