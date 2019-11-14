@@ -1,15 +1,13 @@
 # eMAGMA-TUTORIAL
 
-This tutorial is a step by step guide on how to use eMAGMA, an approach to conducting eQTL informed gene-based tests by assigning SNPs to tissue-specific eGenes as presented in Gerrin et al., 2019ab. Here we provide the scripts and files to apply the eMAGMA approach which generates a list of disease-associated eGenes using genome-wide summary statistics. In this tutorial, we apply eMAGMA to GWAS summary statistics of Major Depression Disorder (MDD); these summary statistics are publicly available from the Psychiatric Genomic Consortium (PGC) website.
+This tutorial is a step by step guide on how to use eMAGMA, an approach to conducting eQTL informed gene-based tests by assigning SNPs to tissue-specific eGenes as presented in Gerring et al., 2019a, Gerring et al., 2019b. Here we provide the scripts and files to use the eMAGMA methodology which generates a list of disease-associated eGenes using genome-wide summary statistics. In this tutorial, we will show how to apply eMAGMA using GWAS summary statistics of Major Depression Disorder (MDD) as example data; these summary statistics are publicly available from the Psychiatric Genomic Consortium (PGC) website.
 
-The tutorial is divided in two parts. Part 1 Runs eMAGMA gene-based analysis of proximity, this analysis integrates a SNP-gene association from GTEx to GWAS summary data. SNPs (from the summary data) are assigned to genes based on their association with gene expression. The SNP-gene association from GTEx is a tissue specific annotation, hence we can estimate what genes are more highly associated with MDD at the tissue level. Part 2 runs eMAGMA gene-set analysis, testing the enrichment of association in co-expression networks. The aim is to identify modules (sets defined by highly correlated genes) that are highly associated with MDD risk.
-Tissue-specific annotation files and Co-expression network files are freely provided with this tutorial. Explanation of the methods and resources used in this tutorial are provided in the publication accompanying this tutorial, Gerrin et al., 2009b
+The tutorial is divided into two parts. Part 1 conducts eMAGMA gene-based analysis, this analysis integrates SNP-gene associations from an eQTL reference dataset with GWAS summary statistics. We generated annotation files in which SNPs are assigned to genes based on their association with gene expression.   The SNP-gene associations are tissue specific; hence we can estimate what genes are more highly associated with a disease at the tissue level. Part 2 conducts eMAGMA gene-set analysis, testing for the enrichment of association in co-expression networks. The aim of this analysis is to identify modules (sets of highly correlated genes) that are highly associated with disease risk. Tissue-specific annotation files and co-expression network files (for 48 tissues) are shared as part of this tutorial.   Explanation of the methods and resources used in this tutorial are provided in the publication accompanying this tutorial, Gerring et al., 2009b.
 
 
 **Requirements** 
 
-This tutorial is executable in Unix, it is assumed that users are familiar with the Unix environment and command line. You can type or copy paste the commands or re-structure them as you wish. This is a hands-on tutorial with minimum theoretical explanations. It is essential that the user reads through the publications that accompanies the tutorial (Gerring et al. 2019ab) as they provide the theoretical background for the analyses. Knowledge of GWAS and GWA-summary analysis is necessary. Maree’s repository https://github.com/MareesAT/GWA_tutorial offers a detailed guide on GWAS analysis.
-
+This tutorial is executable in Unix, it is assumed that users are familiar with the Unix environment and command line. You can type or copy paste the commands or re-structure them as you wish. This is a hands-on tutorial with minimum theoretical explanations. It is essential that the user reads through the publications that accompany the tutorial (Gerring et al. 2019a, Gerring et al., 2019b) as they provide the theoretical background for the analyses. Knowledge of GWAS and GWA-summary analysis is required. We have previously generated a tutorial on the execution of GWAS analysis through another Github  repository https://github.com/MareesAT/GWA_tutorial (Marees et al., 2018).
 
 *************************************
 
@@ -42,7 +40,7 @@ The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 20
 
 *GWAS summary = MDD2018_ex23andMe from PGC web site*
         
-        https://www.med.unc.edu/pgc/results-and-downloads/mdd/
+        wget https://www.med.unc.edu/pgc/results-and-downloads/mdd/
         
         
 
