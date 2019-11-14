@@ -48,9 +48,9 @@ Notice: If you are using your own data, make sure to download the auxiliary file
 
 This tutorial provides gene annotation and co-expression networks for 48 tissues, including 13 brain tissues and whole blood. At the end of the tutorial you will be able to apply the eMAGMA approach to your own data using these files.
 
-**lIST OF FILES:**
+**LIST OF FILES SHARED WITH THIS TUTORIAL:**
 
-**eMAGMA Annotation files**
+**eMAGMA Annotation files (FOR 48 TISSUES)**
 
 *Batch1.annotation*
 
@@ -64,7 +64,7 @@ This tutorial provides gene annotation and co-expression networks for 48 tissues
 
 *Batch5.annotation*
 
-**eMAGMA Co-expression network files**
+**eMAGMA Co-expression network files (FOR 48 TISSUES)**
 
 *network_files.zip*
 
