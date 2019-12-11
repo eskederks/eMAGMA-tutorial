@@ -40,7 +40,7 @@ The analysis is done using MAGMA v1.07b (de Leeuw, Neale, Heskes, & Posthuma, 20
 
 *GWAS summary = MDD2018_ex23andMe from PGC web site*
         
-        wget https://www.med.unc.edu/pgc/results-and-downloads/mdd/
+     https://www.med.unc.edu/pgc/results-and-downloads/
         
         
 
