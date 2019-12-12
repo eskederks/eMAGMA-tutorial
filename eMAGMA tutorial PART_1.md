@@ -35,7 +35,7 @@ For practical reasons, we will use only the annotation files for the Amygdala, w
 
     mkdir Brain 
     cd Brain 
-    wget https://github.com/AngelaMinaVargas/eMAGMA-tutorial/blob/master/Batch1.annot.zip
+    wget https://github.com/eskederks/eMAGMA-tutorial/raw/master/Batch1_annot.zip
     unzip Batch1.zip
     cd ..
 
