@@ -48,7 +48,7 @@ Make sure you return to the eMAGMA folder. To run the association use:
     --out Amygdala_emagma      
      
 
-The above command indicates: Brain_Amygdala.genes.annot, is the input file for the analysis,  P-values are extracted from the MDD GWAS summary data [MDD2018_ex23andMe_emagma.txt]. The effective number of samples is in column Neff. Multiple testing is done using 10,000 adaptive permutations (--adap-permp=10,000).
+The above command indicates: Brain_Amygdala.genes.annot, is the input file for the analysis,  P-values are extracted from the MDD GWAS summary data [MDD2018_ex23andMe_emagma.txt]. The effective number of samples is in column Neff. Permutation-based empirical gene p-values are estimated using 10,000 adaptive permutations (--adap-permp=10,000).
 
 The program also generates a log file [Amygdala_emagma.log]. The log file has summary information of the run, i.e. errors if any, how many genes were read and how many genes have a valid SNP assigned. An inspection of the Amygdala_emagma.log, shows that 1301 genes definitions were read from the annotation file and 1258 genes have valid SNPs in genotype data.
 
