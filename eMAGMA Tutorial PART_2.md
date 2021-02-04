@@ -11,7 +11,7 @@ Details of the assembly of the co-expression networks are provided in Gerring et
 As a first step, unzip the networks.zip file and run gene-set analysis using the code below:
 
     ./magma --gene-results Amygdala_emagma.genes.raw 
-    --set-annot network_files/Brain_Amygdala_entrez_gtex_v7_normalised.txt col=2,1 
+    --set-annot network_files/Brain_Amygdala.txt col=2,1 
     --out Amygdala_emagma 
 
 The log file [Amygdala_emagma.log] shows that 24 gene-set (modules) were read from the input file, of these, 23 gene-sets include genes defined in the genotype data (containing a total of 1188 unique genes). 
